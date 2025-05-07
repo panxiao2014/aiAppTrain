@@ -1,8 +1,10 @@
 import os
 import requests
+import finnhub
 
 with open('credentials/finnhub.txt', 'r') as f:
-    finnhub_key = f.read().strip()
+    finnhubKey = f.read().strip()
+    finnhubClient = finnhub.Client(api_key=finnhubKey)
 
 
 def get_company_list() -> list:
@@ -32,10 +34,7 @@ def get_company_list() -> list:
     
 
 def get_stock_price(symbol: str) -> float:
-    url = f'https://finnhub.io/api/v1/quote?symbol={symbol}&token={finnhub_key}'
-    response = requests.get(url)
-    data = response.json()
-    return data['c']  # 'c' is the current price
+    return finnhubClient.quote(symbol)['c']
 
 
 
