@@ -33,7 +33,7 @@ def get_past_news(ticker: str, company: str, pastDays: int) -> List[Dict[str, st
     "from": startDate,
     "to": endDate,
     "sortBy": "publishedAt",
-    "apiKey": "190d637d2abf4417a3ed42226a9fd7f6",
+    "apiKey": newsApibKey,
     "language": "en",
     "searchIn": "description",
     "page": 1
