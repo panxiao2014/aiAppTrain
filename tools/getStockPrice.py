@@ -1,4 +1,4 @@
-from utils.finUtil import get_company_list, get_stock_price
+from utils.finUtil import get_company_list, get_stock_quote
 from utils.companyCompleter import CompanyInput
 
 
@@ -18,5 +18,5 @@ if __name__ == "__main__":
         companyName = companyOutput[1]
         break
 
-    stockPrice = get_stock_price(companyTicker)
+    stockPrice = get_stock_quote(companyTicker)
     print(f"Current stock price for {companyTicker} ({companyName}): {stockPrice}$")

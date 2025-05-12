@@ -1,4 +1,5 @@
 import re
+import asyncio
 from typing import Tuple
 from utils.finUtil import get_company_list
 from utils.companyCompleter import CompanyInput
@@ -6,8 +7,8 @@ from utils.newsUtil import get_past_news
 from llama_index.llms.deepseek import DeepSeek
 from llama_index.core.agent.workflow import AgentWorkflow
 
-MaxPastDays = 30
 
+MaxPastDays = 30
 
 def cleanCompanyName(comppanyName: str) -> str:
     pattern = r'\s*(?:-\s*Class\s+[A-Za-z]+|Company|Inc|Corp|Ltd|LLC|\.?)\s*$'
@@ -43,7 +44,17 @@ def getSystemPrompt(companyTicker: str, companyName: str, pastDays: int) -> str:
     return content.format(companyTicker=companyTicker, companyName=companyName, pastDays=pastDays) 
 
 
-def main():
+async def myWorkFlow():
+    workflow = AgentWorkflow.from_tools_or_functions(
+        toolList,
+        llm=llm,
+        system_prompt=systemPromt)
+
+    response = await workflow.run(user_msg="Show me stock price change related news")
+    print(response)
+
+
+if __name__ == "__main__":
     companyTicker, companyName = selectCompany()
     pastDays = selectPastDays()
 
@@ -55,15 +66,5 @@ def main():
 
     systemPromt = getSystemPrompt(companyTicker, companyName, pastDays)
 
-    workflow = AgentWorkflow.from_tools_or_functions(
-        toolList,
-        llm=llm,
-        system_prompt=systemPromt)
 
-
-    response = workflow.run(user_msg="Show me stock price change related news")
-    print(response)
-
-
-if __name__ == "__main__":
-    main()
+    asyncio.run(myWorkFlow())

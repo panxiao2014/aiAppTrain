@@ -11,6 +11,7 @@ Your goal is to analyze each news, if it is related to the company's stock price
 
 Your final answer MUST be written in the following JSON format:
 {{
+  "stock_total_events": total_number,
   "stock_price_events": [
     {{
       "time": "yyyy-mm-dd",
@@ -20,5 +21,7 @@ Your final answer MUST be written in the following JSON format:
 }}
 
 Note:
-- for the "summary" field, just copy the news desciption from what the function tool's return.
+- "total_number" is the total number of news that are related to stock price change.
+- for the "summary" field, just copy the news desciption from what the function tool returns.
+- if there are mutliple stock related news for the same day, use your judge to select only one of them for that date.
 - if you can not find any stock price change event, return a json data with an empty list for field "stock_price_events"
