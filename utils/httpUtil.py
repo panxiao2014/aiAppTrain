@@ -6,9 +6,9 @@ from utils.logUtil import setup_logger
 logger = setup_logger("httpUtil")
 
 
-def get_http_request(url: str, params: dict) -> Optional[Dict[str, Any]]:
+def get_http_request(url: str, params: Optional[dict] = None) -> Optional[Dict[str, Any]]:
     try:
-        response = requests.get(url, params=params)
+        response = requests.get(url, params=params if params is not None else {})
         response.raise_for_status()
 
         try:

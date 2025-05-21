@@ -4,6 +4,8 @@ from typing import Tuple
 from utils.finUtil import get_company_list
 from utils.companyCompleter import CompanyInput
 from utils.newsUtil import get_past_news
+from utils.finUtil import get_stock_price
+from utils.timeUtil import find_workdays
 from llama_index.llms.deepseek import DeepSeek
 from llama_index.core.agent.workflow import AgentWorkflow
 
@@ -62,7 +64,7 @@ if __name__ == "__main__":
         deepseekKey = f.read().strip()
     llm = DeepSeek(model="deepseek-chat", api_key=deepseekKey)
 
-    toolList = [get_past_news]
+    toolList = [get_past_news, get_stock_price, find_workdays]
 
     systemPromt = getSystemPrompt(companyTicker, companyName, pastDays)
 

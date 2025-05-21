@@ -14,16 +14,16 @@ def setup_logger(module_name, log_dir="logs"):
         f"%(asctime)s [%(levelname)s] [{module_name}: %(lineno)d]: %(message)s"
     )
 
-    handler = RotatingFileHandler(
+    file_handler = RotatingFileHandler(
         f"{log_dir}/app.log",
         maxBytes=5*1024*1024,
         backupCount=2
     )
-    handler.setFormatter(formatter)
-    logger.addHandler(handler)
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
 
-    console_handler = logging.StreamHandler()
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
+    # console_handler = logging.StreamHandler()
+    # console_handler.setFormatter(formatter)
+    # logger.addHandler(console_handler)
 
     return logger

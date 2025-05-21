@@ -2,6 +2,10 @@ import os
 from typing import Optional, Tuple
 import requests
 import finnhub
+from utils.httpUtil import get_http_request
+from utils.logUtil import setup_logger
+
+logger = setup_logger("finUtil")
 
 
 with open('credentials/finnhub.txt', 'r') as f:
@@ -44,12 +48,34 @@ def get_stock_quote(symbol: str) -> float:
 
 
 def get_stock_price(symbol: str, date: str) -> Optional[Tuple[float, float]]:
+    """
+    Get the stock price for a given symbol and date.
+
+    Args:
+        symbol (str): The stock symbol.
+        date (str): The date in the format 'YYYY-MM-DD'.
+
+    Returns:
+        A float of the close price of the stock
+        on the given date. If the date is not available, returns None.
+    """
     url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={alphaVantageKey}"
-    response = requests.get(url).json()['Time Series (Daily)']
+    try:
+        httpData = get_http_request(url=url)
+    except Exception as e:
+        logger.warn(f"Something went wrong: {e}")
+        return None
     
-    dailyData = response.get(date)
+    #check if httpData has a key 'Information':
+    if(httpData['Information']):
+        #check if the value contains 'rate limit':
+        if('rate limit' in httpData['Information']):
+            logger.warn(f"{httpData['Information']}")
+            return None
+    
+    dailyData = httpData['Time Series (Daily)'].get(date)
     if(dailyData):
-        return (dailyData["1. open"], dailyData["4. close"])
+        return (dailyData["4. close"])
     else:
         return None
 
@@ -59,4 +85,4 @@ def get_stock_price(symbol: str, date: str) -> Optional[Tuple[float, float]]:
 if __name__ == "__main__":
     #print(get_stock_quote('AAPL'))
 
-    print(get_stock_price('AAPL', '2015-05-05'))
+    print(get_stock_price('TSM', '2025-05-20'))

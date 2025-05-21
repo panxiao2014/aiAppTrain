@@ -7,7 +7,11 @@ company name: {companyName}
 
 You are going to use tools to get company news for the past {pastDays} days.
 
-Your goal is to analyze each news, if it is related to the company's stock price change, then save this news in a list.
+Your first goal is to analyze each news, if it is related to the company's stock price change, then save this news in a list.
+
+Your second goal is that for each of the news in the above saved list, get the date of the news, and then find the closest workday and the previous workday of that date.
+
+Your third goal is to get the stock price for the closest workday and the previous workday
 
 Your final answer MUST be written in the following JSON format:
 {{
@@ -16,6 +20,8 @@ Your final answer MUST be written in the following JSON format:
     {{
       "time": "yyyy-mm-dd",
       "summary": "breif summary of the event",
+      "previous": "the stock price of the previous workday. If price is not available, return None",
+      "close": "the stock price of the closest workday. If price is not available, return None"
     }}
   ]
 }}
@@ -25,3 +31,4 @@ Note:
 - for the "summary" field, just copy the news desciption from what the function tool returns.
 - if there are mutliple stock related news for the same day, use your judge to select only one of them for that date.
 - if you can not find any stock price change event, return a json data with an empty list for field "stock_price_events"
+- your final output MUST ONLY contain the json data. DO NOT add any other words.
