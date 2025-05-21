@@ -1,16 +1,16 @@
-# 🗂️ aiToolTrain
+# 🗂️ aiAppTrain
 
-Try to create some tools by ways of AI agent. The agent framework is [`LlamaIndex`](https://github.com/run-llama/llama_index).
+Try to create some applications by ways of AI agent. The agent framework is [`LlamaIndex`](https://github.com/run-llama/llama_index).
 
 ## 🚀 Overview
 
-I am trying to create some useful tools which are using AI agent technology. The 'usefulness' of a tool is based on two things:
+I am trying to create some useful apps which are using AI agent technology. The 'usefulness' of an app is based on two things:
 
 1. The available tools which LLM can utilize.
 
 2. The power of a LLM model.
 
-So there are some limitations of the AI tools that I created:
+So there are some limitations of the AI apps that I created:
 
 1. I used some API services to get useful data. Since I only use free versions of these services, there are limitation on requests per day or content length of returned data.
 
