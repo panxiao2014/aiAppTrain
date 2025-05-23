@@ -60,7 +60,7 @@ def get_past_news(ticker: str, company: str, pastDays: int) -> List[Dict[str, st
         httpData = get_http_request(url=url, params=params)
 
     except Exception as e:
-        logger.warn(f"Something went wrong: {e}")
+        logger.warning(f"Something went wrong: {e}")
         return []
     
     if(httpData == None):

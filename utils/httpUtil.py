@@ -14,27 +14,27 @@ def get_http_request(url: str, params: Optional[dict] = None) -> Optional[Dict[s
         try:
             httpData = response.json()
         except ValueError as e:
-            logger.warn("Invalid JSON in response:", e)
+            logger.warning("Invalid JSON in response:", e)
             return None
 
     except HTTPError as e:
-        logger.warn(f"HTTP Error: {e} (Status Code: {response.status_code}) (Server Response: {response.text})")
+        logger.wwarningarn(f"HTTP Error: {e} (Status Code: {response.status_code}) (Server Response: {response.text})")
         return None
 
     except ConnectionError:
-        logger.warn("Failed to connect to the server. Check your network or URL.")
+        logger.warning("Failed to connect to the server. Check your network or URL.")
         return None
 
     except Timeout:
-        logger.warn(f"Request timed out.")
+        logger.warning(f"Request timed out.")
         return None
 
     except RequestException as e:
-        logger.warn(f"Unexpected request failure: {e}")
+        logger.warning(f"Unexpected request failure: {e}")
         return None
 
     except Exception as e:
-        logger.warn(f"Something went wrong: {e}")
+        logger.warning(f"Something went wrong: {e}")
         return None
 
     return httpData

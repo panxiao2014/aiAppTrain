@@ -1,4 +1,7 @@
 from datetime import datetime, timedelta
+from utils.logUtil import setup_logger
+
+logger = setup_logger("timeUtil")
 
 def find_workdays(input_date):
     """
@@ -30,8 +33,13 @@ def find_workdays(input_date):
         previous_workday = closest_workday - timedelta(days=1)
         while previous_workday.weekday() >= 5:
             previous_workday -= timedelta(days=1)
+
+    closest_workday = closest_workday.strftime('%Y-%m-%d')
+    previous_workday = previous_workday.strftime('%Y-%m-%d')
+
+    logger.info(f"find workdays for {input_date}: {closest_workday} {previous_workday}")
     
-    return (closest_workday.strftime('%Y-%m-%d'), previous_workday.strftime('%Y-%m-%d'))
+    return (closest_workday, previous_workday)
 
 
 if __name__ == "__main__":
