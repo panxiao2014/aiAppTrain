@@ -1,13 +1,17 @@
 import re
 import asyncio
 from typing import Tuple
-from utils.finUtil import get_company_list
 from utils.companyCompleter import CompanyInput
 from utils.newsUtil import get_past_news
-from utils.finUtil import get_stock_prices
+from utils.finUtil import get_stock_prices, get_company_list, format_event_string
 from utils.timeUtil import find_workdays
 from llama_index.llms.deepseek import DeepSeek
 from llama_index.core.agent.workflow import AgentWorkflow
+from llama_index.core.workflow import Context
+from llama_index.core.agent.workflow import FunctionAgent
+from utils.logUtil import setup_logger
+
+logger = setup_logger("getStockEvent2")
 
 
 MaxPastDays = 30
@@ -46,14 +50,70 @@ def getSystemPrompt(companyTicker: str, companyName: str, pastDays: int) -> str:
     return content.format(companyTicker=companyTicker, companyName=companyName, pastDays=pastDays) 
 
 
-async def myWorkFlow():
-    workflow = AgentWorkflow.from_tools_or_functions(
-        toolList,
-        llm=llm,
-        system_prompt=systemPromt)
+async def save_events(ctx: Context, stockEvents: str) -> str:
+    """
+    Useful for saving stock events. The events are representd in a string with json format.
+    
+    """
+    logger.info(f"Saving stock events: {stockEvents}")
+    
+    current_state = await ctx.get("state")
+    if "stock_events" not in current_state:
+        current_state["stock_events"] = ""
 
-    response = await workflow.run(user_msg="Show me stock price change related news")
-    print(response)
+    current_state["stock_events"] = stockEvents
+    await ctx.set("state", current_state)
+    return "Stock events saved."
+
+
+
+async def get_events(ctx: Context) -> str:
+    """
+    Useful for getting stock events. The events are representd in a string with json format.
+    
+    """
+    current_state = await ctx.get("state")
+    if "stock_events" not in current_state:
+        logger.error("No stock events found in context.")
+        return ""
+    
+    logger.info(f"Getting stock events: {current_state['stock_events']}")
+
+    return current_state["stock_events"]
+    
+
+
+async def myWorkFlow(systemPromt, formatPrompt, llm, toolList):
+    stock_event_agent = FunctionAgent(
+        name="StockEventAgent",
+        description="Useful for searching the web for stock price change related news",
+        system_prompt=systemPromt,
+        llm=llm,
+        tools=toolList,
+        can_handoff_to=["EventFormatAgent"]
+    )
+
+    event_format_agent = FunctionAgent(
+        name="EventFormatAgent",
+        description="Useful for calling a tool to format the stock price change related news into a table",
+        system_prompt=formatPrompt,
+        llm=llm,
+        tools=[format_event_string]
+    )
+
+    agent_workflow = AgentWorkflow(
+        agents=[stock_event_agent, event_format_agent],
+        root_agent=stock_event_agent.name,
+        initial_state={
+            "stock_events": ""
+        }
+    )
+
+    await agent_workflow.run(user_msg="Show me stock price change related news")
+    return
+
+
+
 
 
 if __name__ == "__main__":
@@ -64,9 +124,12 @@ if __name__ == "__main__":
         deepseekKey = f.read().strip()
     llm = DeepSeek(model="deepseek-chat", api_key=deepseekKey)
 
-    toolList = [get_past_news, get_stock_prices, find_workdays]
+    toolList = [get_past_news, get_stock_prices, find_workdays, save_events]
 
     systemPromt = getSystemPrompt(companyTicker, companyName, pastDays)
 
+    with open('prompts/formatStockEvent.txt', 'r', encoding='utf-8') as file:
+        formatPrompt: str = file.read()
 
-    asyncio.run(myWorkFlow())
+
+    asyncio.run(myWorkFlow(systemPromt, formatPrompt, llm, toolList))

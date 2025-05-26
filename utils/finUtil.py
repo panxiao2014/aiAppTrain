@@ -1,4 +1,6 @@
 import os
+import json
+from prettytable import PrettyTable
 from typing import Optional, Tuple
 import requests
 import finnhub
@@ -28,6 +30,8 @@ def get_company_list() -> list:
 
         response = requests.get(url)
         data = response.text
+
+        logger.info(f"Save ticker list to data/tickers.csv")
 
         #save first and second columns of data to a csv file in data folder
         with open("data/tickers.csv", "w") as f:
@@ -125,9 +129,51 @@ def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[O
         previousWorkdayData = previousWorkdayData["4. close"]
 
     if(workdayData and previousWorkdayData):
-        logger.warning(f"Getting price for {symbol} on {workday} and {previousWorkday}: {workdayData}, {previousWorkdayData}")
+        logger.info(f"Getting price for {symbol} on {workday} and {previousWorkday}: {workdayData}, {previousWorkdayData}")
 
     return (workdayData, previousWorkdayData)
+
+
+def format_event_string(stockEvent: str) -> PrettyTable:
+    """
+    For a stock event representd in json format string, format it to a table.
+
+    Args:
+        stockEvent(str) : The stock event representd in json format string. It has the following format:
+            {{
+            "stock_total_events": total_number,
+            "stock_price_events": [
+                {{
+                "time": "yyyy-mm-dd",
+                "summary": "breif summary of the event",
+                "previous": "the stock price of the previous workday. If price is not available, return None",
+                "close": "the stock price of the closest workday. If price is not available, return None"
+                }}
+            ]
+            }}
+
+    Returns:
+        A formatted table of the stock event
+    """
+    logger.info(f"Formatting stock event string: {stockEvent}")
+
+    #get the json format string
+    stockEvent = json.loads(stockEvent)
+    #get the stock price events
+    stock_price_events = stockEvent["stock_price_events"]
+
+    #format the list of events into a table, the table has four columns: time, summary, previous, close
+    table = PrettyTable()
+    table.field_names = ["time", "summary", "previous", "close"]
+    table._max_width = {"summary": 50}  # set the max width of "summary" column to 50
+    table.hrules = True  # enable horizontal rules
+    table.wrap_lines = True  # enable auto wrap of long string
+    table.align["summary"] = "l"  # align "summary" column to left
+    for event in stock_price_events:
+        table.add_row([event["time"], event["summary"], event["previous"], event["close"]])
+
+    print(table)
+    return table
 
 
 
@@ -135,4 +181,9 @@ def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[O
 if __name__ == "__main__":
     #print(get_stock_quote('AAPL'))
 
-    print(get_stock_prices('TSM', '2025-05-20', '2025-05-19'))
+    #print(get_stock_prices('TSM', '2025-05-20', '2025-05-19'))
+
+    event_string = """ {"stock_total_events":1,"stock_price_events":[{"time":"2025-05-23","summary":"Oracle will reportedly buy $40 billion worth of Nvidia chips to power the first Stargate project, a new data center in Abilene, Texas. The company will buy 400,000 of Nvidia latest 'superchips' for training and running artificial intelligence (AI) systems...","previous":"132.8300","close":"131.2900"}]}"""
+
+    table = format_event_string(event_string)
+    print(table)

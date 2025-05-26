@@ -6,6 +6,7 @@ AAAU,Goldman Sachs Physical Gold ETF
 AACBR,Artius II Acquisition Inc Rights
 AACBU,Artius II Acquisition Inc - Units (1 Ord Shs & 1 Rts)
 AACG,ATA Creativity Global
+AACIU,Armada Acquisition Corp II - Units (1 Ord Cls A & 1/2 War)
 AACT,Ares Acquisition Corporation II - Class A
 AACT-U,Ares Acquisition Corporation II - Units (1 Ord Class A & 1/2 War)
 AACT-WS,Ares Acquisition Corporation II - Warrants (01/01/9999)
@@ -275,6 +276,7 @@ AHG,Akso Health Group
 AHH,Armada Hoffler Properties Inc
 AHH-P-A,Armada Hoffler Properties Inc
 AHI,Advanced Health Intelligence Ltd
+AHL,Aspen Insurance Holdings Ltd
 AHL-P-D,Aspen Insurance Holdings Limited 5625 Perpetual NonCumulative Preference Shares
 AHL-P-E,Aspen Insurance Hldgs
 AHLT,AMERICAN BEACON AHL TREND ETF 
@@ -299,13 +301,11 @@ AIFE,Aifeex Nexus Acquisition Corp Cl A Ord
 AIFER,Aifeex Nexus Acquisition Corp Right
 AIFEU,Aifeex Nexus Acquisition Corp - Units ( Ord Cls A & 1 Rts)
 AIFF,WaveDancer Inc
-AIFU,Fanhua Inc
+AIFU,AIFU Inc - Class A
 AIG,American International Group Inc
 AIHS,Senmiao Technology Ltd
+AII,American Integrity Insurance Group Inc
 AILE,iLearningEngines Holdings Inc - Class A
-AIMAU,Aimfinity Investment Corp I - Units (1 Ord Class A 1 Class 1 War & 1/2 Class 2 War)
-AIMAW,Aimfinity Investment Corp I - Warrants - Class 1 (31/12/2029)
-AIMBU,Aimfinity Investment Corp I - Units (1 Ord Cl A & 1/2 Wt Cl 2)
 AIMD,Ainos Inc
 AIMDW,Ainos Inc - Warrants (29/07/2027)
 AIN,Albany International Corp - Class A
@@ -531,6 +531,7 @@ ANSC,Agriculture & Natural Solutions Acquisition Corp - Class A
 ANSCU,Agriculture & Natural Solutions Acquisition Corp - Units (1 Ord Class A & 1/2 War)
 ANSCW,Agriculture & Natural Solutions Acquisition Corp - Warrants (03/10/2028)
 ANSS,Ansys Inc
+ANTA,Antalpha Platform Holding Company
 ANTE,AirNet Technology Inc
 ANTX,AN2 Therapeutics Inc
 ANVS,Annovis Bio Inc
@@ -557,7 +558,6 @@ AP-WS,Ampco-Pittsburgh Corp - Warrants (01/08/2025)
 APA,APA Corporation
 APAM,Artisan Partners Asset Management Inc - Class A
 APCB,ACTIVEPASSIVE CORE BOND ETF 
-APCX,AppTech Payments Corp
 APCXW,AppTech Payments Corp - Warrants (17/12/2026)
 APD,Air Products & Chemicals Inc
 APDN,Applied Dna Sciences Inc
@@ -606,6 +606,7 @@ APT,Alpha Pro Tech Ltd
 APTOF,Aptose Biosciences Inc
 APTV,Aptiv PLC
 APUE,ACTIVEPASSIVE U.S. EQUITY ETF 
+APUS,Apimeds Pharmaceuticals US Inc
 APVO,Aptevo Therapeutics Inc
 APWC,Asia Pacific Wire & Cable
 APYX,Apyx Medical Corp
@@ -617,6 +618,7 @@ AQNB,Algonquin Power & Utilities Corp
 AQST,Aquestive Therapeutics Inc
 AQWA,GLOBAL X CLEAN WATER ETF 
 AR,Antero Resources Corp
+ARAI,Arrive AI Inc
 ARAY,Accuray Inc
 ARB,AltShares Merger Arbitrage ETF
 ARBB,ARB IOT Group Ltd
@@ -733,6 +735,8 @@ ASPCU,A SPAC III Acquisition Corp - Units (1 Ord Cls A & 1 Rts)
 ASPI,ASP Isotopes Inc
 ASPN,Aspen Aerogels Inc
 ASPS,Altisource Portfolio Solutions S.A.
+ASPSW,Altisource Portfolio Solutions S.A. Net Settle Stakeholder Warrants
+ASPSZ,Altisource Portfolio Solutions S.A. Cash Exercise Stakeholder Warrants
 ASPY,ASYMmetric Smart S&P 500 ETF
 ASR,Grupo Aeroportuario Del Sureste S.A.
 ASRT,Assertio Holdings Inc
@@ -910,7 +914,6 @@ AWRE,Aware Inc
 AWX,Avalon Holdings Corp - Class A
 AX,Axos Financial Inc
 AXAC-R,AXIOS Sustainable Growth Acquisition Corporation Rights to receive onetenth 110 of one Class A ordinary share
-AXDX,Accelerate Diagnostics Inc
 AXGN,Axogen Inc
 AXL,American Axle & Manufacturing Holdings Inc
 AXNX,Axonics Inc
@@ -935,6 +938,7 @@ AZTD,AZTLAN GLOBAL STOCK SELECTION DM SMID ETF
 AZTR,Azitra Inc
 AZUL,Azul S.A.
 AZZ,AZZ Inc
+B,Barrick Gold Corp
 BA,Boeing Company
 BAB,INVESCO TAXABLE MUNICIPAL BOND ETF 
 BABA,Alibaba Group Holding Ltd
@@ -1109,11 +1113,9 @@ BEAGU,Bold Eagle Acquisition Corp - Units (1Ord Cls A & 1 Rts)
 BEAM,Beam Therapeutics Inc
 BEAT,HeartBeam Inc
 BEATW,HeartBeam Inc - Warrants (31/10/2026)
-BECN,Beacon Roofing Supply Inc - Class A
 BEDU,Bright Scholar Education Holdings Ltd
 BEDZ,ADVISORSHARES HOTEL ETF 
 BEEM,Beam Global
-BEEP,Mobile Infrastructure Corp
 BEEX,The Beehive ETF
 BEEZ,HONEYTREE U.S. EQUITY ETF 
 BEGS,Rareview 2x Bull Cryptocurrency & Precious Metals ETF
@@ -1154,6 +1156,7 @@ BFRG,Bullfrog AI Holdings Inc
 BFRGW,Bullfrog AI Holdings Inc - Warrants(18/01/2028)
 BFRI,Biofrontera Inc
 BFRIW,Biofrontera Inc - Warrants (27/10/2026)
+BFRZ,Innovator Equity Managed 100 Buffer ETF
 BFS,Saul Centers Inc
 BFS-P-D,Saul Centers Inc
 BFS-P-E,Saul Centers Inc
@@ -1195,6 +1198,7 @@ BHFAO,Brighthouse Financial Inc
 BHFAP,Brighthouse Financial Inc
 BHIL-WS,Benson Hill Inc Wt
 BHK,BlackRock Core Bond Trust
+BHK-R-W,Blackrock Core Bond Trust Rights expiring June 18 2025 Rights when issued
 BHLB,Berkshire Hills Bancorp Inc
 BHM,Bluerock Homes Trust Inc - Class A
 BHP,BHP Group Ltd
@@ -1408,7 +1412,7 @@ BOIL,ProShares Ultra Bloomberg Natural Gas 2x Shares
 BOKF,BOK Financial Corp
 BOLD,Boundless Bio Inc
 BOLT,Bolt Biotherapeutics Inc
-BON,Bon Natural Life Ltd
+BON,Bon Natural Life Ltd - Class A
 BOND,PIMCO ACTIVE BOND EXCHANGE-TRADED FUND 
 BOOM,DMC Global Inc
 BOOT,Boot Barn Holdings Inc
@@ -1460,7 +1464,6 @@ BRIF,FIS Bright Portfolios Focused Equity ETF
 BRK-A,Berkshire Hathaway Inc - Class A
 BRK-B,Berkshire Hathaway Inc - Class B
 BRKD,DIREXION DAILY&NBSP;BRKB BEAR 1X SHARES 
-BRKHU,BurTech Acquisition Corp - Units (1 Ord Share Class A & 1 War)
 BRKL,Brookline Bancorp Inc
 BRKR,Bruker Corp
 BRKU,DIREXION DAILY BRKB BULL 2X SHARES 
@@ -1595,9 +1598,6 @@ BUFZ,FT VEST LADDERED MODERATE BUFFER ETF
 BUG,GLOBAL X CYBERSECURITY ETF 
 BUI,BlackRock Utility Infrastructure & Power Opportunities Trust
 BUJA,Bukit Jalil Global Acquisition 1 Ltd
-BUJAR,Bukit Jalil Global Acquisition 1 Ltd
-BUJAU,Bukit Jalil Global Acquisition 1 Ltd - Units (1 Ord 1/2 War & 1 Rts)
-BUJAW,Bukit Jalil Global Acquisition 1 Ltd - Warrants (02/05/2029)
 BUL,Pacer US Cash Cows Growth ETF
 BULD,PACER BLUESTAR ENGINEERING THE FUTURE ETF 
 BULL,Webull Corporation
@@ -1697,7 +1697,6 @@ CAMP,CAMP4 Therapeutics Corp
 CAMT,Camtek Ltd
 CAMX,CAMBIAR AGGRESSIVE VALUE ETF 
 CAN,Canaan Inc
-CANB,Can B Corp
 CANC,Tema Oncology ETF
 CANE,Teucrium Sugar Fund
 CANF,Can-Fite Biopharma Ltd
@@ -1768,7 +1767,9 @@ CCAP,Crescent Capital BDC Inc
 CCB,Coastal Financial Corp
 CCBG,Capital City Bank Group Inc
 CCCC,C4 Therapeutics Inc
+CCCMU,Columbus Circle Capital Corp I - Units (1 Ord Cls A & 1/2 War)
 CCCS,CCC Intelligent Solutions Holdings Inc
+CCCXU,Churchill Capital Corp X - Units (1 Ord Cls A & 1/4 War)
 CCD,Calamos Dynamic Convertible and Income Fund
 CCEC,Capital Clean Energy Carriers Corp
 CCEF,Calamos CEF Income & Arbitrage ETF
@@ -1938,6 +1939,8 @@ CGV,Conductor Global Equity Value ETF
 CGW,INVESCO S&P GLOBAL WATER INDEX ETF 
 CGXU,Capital Group International Focus Equity ETF
 CHA,Chagee Holdings Ltd
+CHAC,Crane Harbor Acquisition Corp - Class A
+CHACR,Crane Harbor Acquisition Corp
 CHACU,Crane Harbor Acquisition Corp - Units (1 Ord Cls A & 1 Rts)
 CHAR,CHAPARRAL RESOURCES INC
 CHARR,Charlton Aria Acquisition Corporation Rights
@@ -2102,6 +2105,7 @@ CMCM,Cheetah Mobile Inc
 CMCO,Columbus Mckinnon Corp
 CMCSA,Comcast Corp - Class A
 CMCT,Creative Media & Community Trust
+CMDB,Costamare Bulkers Holdings Ltd
 CMDB-W,Costamare Bulkers Holdings Ltd WhenIssued
 CMDT,PIMCO COMMODITY STRATEGY ACTIVE EXCHANGE-TRADED FUND 
 CMDY,ISHARES BLOOMBERG ROLL SELECT COMMODITY STRATEGY ETF 
@@ -2166,7 +2170,6 @@ CNS,Cohen & Steers Inc
 CNSP,Cns Pharmaceuticals Inc
 CNTA,Centessa Pharmaceuticals plc
 CNTB,Connect Biopharma Holdings Ltd
-CNTM,ConnectM Technology Solutions Inc - Class A
 CNTX,Context Therapeutics Inc
 CNTY,Century Casinos Inc
 CNVS,Cineverse Corp - Class A
@@ -2302,6 +2305,7 @@ CQP,Cheniere Energy Partners LP
 CQQQ,INVESCO CHINA TECHNOLOGY ETF 
 CR,Crane Company
 CR-W,Crane Company When Issued
+CRACU,Cal Redwood Acquisition Corp - Units (1 Ord Cls A & 1 Rts)
 CRAI,CRA International Inc
 CRAK,VANECK OIL REFINERS ETF 
 CRBD,Corebridge Financial Inc
@@ -2387,6 +2391,7 @@ CSTA,Constellation Acquisition Corp I Class A
 CSTA-U,Constellation Acquisition Corp I Units each consisting of one Class A ordinary share and onethird of one redeemable warrant
 CSTA-WS,Constellation Acquisition Corp I Redeemable warrants each whole warrant exercisable for one Class A ordinary share at an exercise price of 11.50
 CSTE,Caesarstone Ltd
+CSTK,Invesco Comstock Contrarian Equity ETF
 CSTL,Castle Biosciences Inc
 CSTM,Constellium SE - Class A
 CSV,Carriage Services Inc
@@ -2489,7 +2494,7 @@ CVY,Invesco Zacks Multi-Asset Income ETF
 CW,Curtiss-Wright Corp
 CWAN,Clearwater Analytics Holdings Inc Class A
 CWB,SPDR(R) BLOOMBERG CONVERTIBLE SECURITIES ETF 
-CWBC,Community West Bancshares.
+CWBC,Community West Bancshares
 CWCO,Consolidated Water Co. Ltd
 CWD,CaliberCos Inc - Class A
 CWEB,DIREXION DAILY CSI CHINA INTERNET INDEX BULL 2X SHARES 
@@ -2627,6 +2632,8 @@ DEED,FIRST TRUST TCW SECURITIZED PLUS ETF
 DEEF,XTRACKERS FTSE DEVELOPED EX US MULTIFACTOR ETF 
 DEEP,ACQUIRERS DEEP VALUE ETF 
 DEFI,Hashdex Bitcoin Futures ETF
+DEFR,Aptus Deferred Income ETF
+DEFT,Defi Technologies Inc
 DEHP,DIMENSIONAL EMERGING MARKETS HIGH PROFITABILITY ETF 
 DEI,Douglas Emmett Inc
 DELL,Dell Technologies Inc - Class C
@@ -2677,7 +2684,6 @@ DFND,SIREN DIVCON DIVIDEND DEFENDER ETF
 DFNL,DAVIS SELECT FINANCIAL ETF 
 DFNM,DIMENSIONAL NATIONAL MUNICIPAL BOND ETF 
 DFP,Flaherty & Crumrine Dynamic Preferred and Income Fund Inc
-DFS,Discover Financial Services
 DFSB,DIMENSIONAL GLOBAL SUSTAINABILITY FIXED INCOME ETF 
 DFSD,DIMENSIONAL SHORT-DURATION FIXED INCOME ETF 
 DFSE,DIMENSIONAL EMERGING MARKETS SUSTAINABILITY CORE 1 ETF 
@@ -3017,7 +3023,6 @@ EAPR,Innovator Emerging Markets Power Buffer ETF April
 EARN,Ellington Residential Mortgage REIT
 EASG,XTRACKERS MSCI EAFE ESG LEADERS EQUITY ETF 
 EAT,Brinker International Inc
-EATV,VEGTECH FOOD INNOVATION & CLIMATE ETF 
 EATZ,ADVISORSHARES RESTAURANT ETF 
 EB,Eventbrite Inc - Class A
 EBAY,EBay Inc
@@ -3139,6 +3144,7 @@ EGAN,eGain Corp
 EGBN,Eagle Bancorp Inc (MD)
 EGF,BlackRock Enhanced Government Fund Inc
 EGGQ,NestYield Visionary ETF
+EGHAU,EGH Acquisition Corp - Units (1 Ord Cls A & 1 Rts)
 EGHT,8X8 Inc
 EGIS,2ndVote Society Defended ETF
 EGLE,GLOBAL X S&P 500 U.S. REVENUE LEADERS ETF 
@@ -3305,7 +3311,7 @@ EPI,WISDOMTREE INDIA EARNINGS FUND
 EPIX,Essa Pharma Inc
 EPM,Evolution Petroleum Corporation
 EPOL,ISHARES MSCI POLAND ETF 
-EPOW,Sunrise New Energy Co. Ltd
+EPOW,Sunrise New Energy Co. Ltd - Class A
 EPP,ISHARES MSCI PACIFIC EX JAPAN ETF 
 EPR,EPR Properties
 EPR-P-C,EPR Properties
@@ -3415,6 +3421,7 @@ ETN,Eaton Corporation plc
 ETNB,89bio Inc
 ETO,Eaton Vance Tax-Advantaged Global Dividend Opportunities Fund
 ETON,Eton Pharmaceuticals Inc
+ETOR,Etoro Group Ltd - Class A
 ETQ,T-REX 2X INVERSE ETHER DAILY TARGET ETF 
 ETR,Entergy Corp
 ETSY,Etsy Inc
@@ -3932,7 +3939,7 @@ FMNB,Farmers National Banc Corp
 FMNY,FIRST TRUST NEW YORK MUNICIPAL HIGH INCOME ETF 
 FMQQ,FMQQ THE NEXT FRONTIER INTERNET ETF 
 FMS,Fresenius Medical Care AG & Co. KGaA
-FMST,Foremost Clean Energy Ltd New
+FMST,FINISHMASTER INC
 FMSTW,Foremost Clean Energy Ltd - Warrants (22/08/2028)
 FMTO,Femto Technologies Inc
 FMX,Fomento Economico Mexicano S.A.B. de C.V.
@@ -4114,8 +4121,9 @@ FTPA,FTAC Parnassus Acquisition Corp - Class A
 FTPAW,FTAC Parnassus Acquisition Corp - Warrants (10/03/2026)
 FTQI,FIRST TRUST NASDAQ BUYWRITE INCOME ETF 
 FTRB,FEDERATED HERMES TOTAL RETURN BOND ETF 
-FTRE,FORTE SOFTWARE INC
+FTRE,Fortrea Holdings Inc
 FTRI,FIRST TRUST INDXX GLOBAL NATURAL RESOURCES INCOME ETF 
+FTRK,Fast Track Group.
 FTS,Fortis Inc
 FTSD,FRANKLIN SHORT DURATION U.S. GOVERNMENT ETF 
 FTSL,FIRST TRUST SENIOR LOAN FUND 
@@ -4317,7 +4325,6 @@ GEM,Goldman Sachs ActiveBeta Emerging Markets Equity ETF
 GEMD,GOLDMAN SACHS ACCESS EMERGING MARKETS USD BOND ETF 
 GEN,Gen Digital Inc
 GENC,Gencor Industries Inc
-GENE,Genetic Technologies Ltd
 GENI,Genius Sports Ltd
 GENK,GEN Restaurant Group Inc - Class A
 GENM,Genter Capital Municipal Quality Intermediate ETF
@@ -4379,6 +4386,8 @@ GHYG,ISHARES US & INTL HIGH YIELD CORP BOND ETF
 GIACU,Gesher I Acquisition Corp - Units (1 Ord Share & 1/2 War)
 GIAX,NICHOLAS GLOBAL EQUITY AND INCOME ETF 
 GIB,CGI Inc - Class A
+GIBO,GIBO Holdings Ltd
+GIBOW,GIBO Holdings Ltd Warrants
 GIC,Global Industrial Company
 GIFI,Gulf Island Fabrication Inc
 GIFT,RDE Inc
@@ -4434,10 +4443,6 @@ GLDY,Defiance Gold Enhanced Options Income ETF
 GLE,Global Engine Group Holding Ltd
 GLIN,VANECK INDIA GROWTH LEADERS ETF 
 GLL,ProShares UltraShort Gold -2x Shares
-GLLI,Globalink Investment Inc
-GLLIR,Globalink Investment Inc
-GLLIU,Globalink Investment Inc - Units (1 Ord 1 Rts & 1 War)
-GLLIW,Globalink Investment Inc - Warrants(06/12/2026)
 GLMD,Galmed Pharmaceuticals Ltd
 GLNG,Golar Lng
 GLO,Clough Global Opportunities Fund.
@@ -4528,7 +4533,6 @@ GOEX,GLOBAL X GOLD EXPLORERS ETF
 GOF,Guggenheim Strategic Opportunities Fund
 GOGL,Golden Ocean Group Ltd
 GOGO,Gogo Inc
-GOLD,Barrick Gold Corp
 GOLF,Acushnet Holdings Corp
 GOLY,STRATEGY SHARES GOLD-HEDGED BOND ETF 
 GOOD,Gladstone Commercial Corp
@@ -4634,7 +4638,9 @@ GSEW,GOLDMAN SACHS EQUAL WEIGHT U.S. LARGE CAP EQUITY ETF
 GSFP,GOLDMAN SACHS FUTURE PLANET EQUITY ETF 
 GSG,iShares S&P GSCI Commodity-Indexed Trust
 GSHD,Goosehead Insurance Inc - Class A
+GSHR,Gesher Acquisition Corp II - Class A
 GSHRU,Gesher Acquisition Corp II - Units (1 Ord Cls A & 1/2 War)
+GSHRW,Gesher Acquisition Corp II - Warrants (11/03/2030)
 GSIB,THEMES GLOBAL SYSTEMICALLY IMPORTANT BANKS ETF 
 GSID,GOLDMAN SACHS MARKETBETA INTERNATIONAL EQUITY ETF 
 GSIE,GOLDMAN SACHS ACTIVEBETA(R) INTERNATIONAL EQUITY ETF 
@@ -4670,6 +4676,7 @@ GTIP,GOLDMAN SACHS ACCESS INFLATION PROTECTED USD BOND ETF
 GTLB,Gitlab Inc - Class A
 GTLS,Chart Industries Inc
 GTLS-P-B,Chart Industries Inc
+GTM,ZoomInfo Technologies Inc
 GTN,Gray Television Inc
 GTN-A,Gray Television Inc - Class A
 GTO,INVESCO TOTAL RETURN BOND ETF 
@@ -4720,9 +4727,6 @@ HACK,Amplify Cybersecurity ETF
 HAE,Haemonetics Corp
 HAFC,Hanmi Financial Corp
 HAFN,Hafnia Ltd
-HAIA,Healthcare AI Acquisition Corp - Class A
-HAIAU,Healthcare AI Acquisition Corp - Units (1 Ord Share Class A & 1/2 War)
-HAIAW,Healthcare AI Acquisition Corp - Warrants (07/12/2026)
 HAIL,SPDR S&P KENSHO SMART MOBILITY ETF 
 HAIN,Hain Celestial Group Inc
 HAL,Halliburton Company
@@ -4893,6 +4897,7 @@ HMR,Sports Properties Acquisition Corp
 HMST,HomeStreet Inc
 HMY,Harmony Gold Mining Co Ltd
 HNDL,STRATEGY SHARES NASDAQ 7 HANDL(TM) INDEX ETF 
+HNGE,Hinge Health Inc - Class A
 HNI,HNI Corp
 HNNA,Hennessy Advisors Inc
 HNNAZ,Hennessy Advisors Inc
@@ -4920,6 +4925,7 @@ HOOD,Robinhood Markets Inc - Class A
 HOOG,Leverage Shares 2X Long HOOD Daily ETF
 HOOK,Hookipa Pharma Inc
 HOOX,Defiance Daily Target 2X Long HOOD ETF
+HOOY,YieldMax HOOD Option Income Strategy ETF
 HOPE,Hope Bancorp Inc
 HORIU,Emerging Markets Horizon Corp - Units (1 Ord Share Class A & 1/2 War)
 HOTH,Hoth Therapeutics Inc
@@ -5192,7 +5198,6 @@ ICAD,Icad Inc
 ICAP,INFRACAP EQUITY INCOME FUND ETF 
 ICCC,Immucell Corp
 ICCM,Icecure Medical Ltd
-ICCT,iCoreConnect Inc
 ICE,Intercontinental Exchange Inc
 ICF,ISHARES COHEN & STEERS REIT ETF 
 ICFI,ICF International Inc
@@ -5222,6 +5227,7 @@ IDAT,ISHARES FUTURE CLOUD 5G AND TECH ETF
 IDCC,Interdigital Inc
 IDE,Voya Infrastructure Industrials and Materials Fund
 IDEC,Innovator International Developed Power Buffer ETF December
+IDEF,iShares Defense Industrials Active ETF
 IDEV,ISHARES CORE MSCI INTERNATIONAL DEVELOPED MARKETS ETF 
 IDGT,ISHARES U.S. DIGITAL INFRASTRUCTURE AND REAL ESTATE ETF 
 IDHQ,INVESCO S&P INTERNATIONAL DEVELOPED QUALITY ETF 
@@ -5294,10 +5300,6 @@ IGR-R-W,CBRE Global Real Estate Income Fund Rights expiring April 6 2023 Rights 
 IGRO,ISHARES INTERNATIONAL DIVIDEND GROWTH ETF 
 IGSB,ISHARES 1-5 YEAR INVESTMENT GRADE CORPORATE BOND ETF 
 IGT,International Game Technology PLC
-IGTA,Inception Growth Acquisition Ltd
-IGTAR,Inception Growth Acquisition Ltd
-IGTAU,Inception Growth Acquisition Ltd - Units (1 Ord 1/2 War & 1 Rts)
-IGTAW,Inception Growth Acquisition Ltd - Warrants(15/10/2026)
 IGTR,Innovator Gradient Tactical Rotation Strategy ETF
 IGV,ISHARES EXPANDED TECH-SOFTWARE SECTOR ETF 
 IGZ,NYSE ARCA LISTED TEST STOCK FOR CTS CQS
@@ -5507,6 +5509,7 @@ IPI,Intrepid Potash Inc
 IPKW,INVESCO INTERNATIONAL BUYBACK ACHIEVERS ETF 
 IPM,Paltalk Inc
 IPO,RENAISSANCE IPO ETF 
+IPODU,Dune Acquisition Corp II - Units (1 Ord Cls A & 1 War)
 IPOS,RENAISSANCE INTERNATIONAL IPO ETF 
 IPPP,PREFERRED-PLUS ETF 
 IPSC,Century Therapeutics Inc
@@ -5527,6 +5530,7 @@ IQQQ,PROSHARES NASDAQ-100 HIGH INCOME ETF
 IQRA,IQ CBRE Real Assets ETF
 IQSI,NYLI CANDRIAM INTERNATIONAL EQUITY ETF 
 IQSM,NYLI CANDRIAM U.S. MID CAP EQUITY ETF 
+IQST,iQSTEL Inc
 IQSU,NYLI CANDRIAM U.S. LARGE CAP EQUITY ETF 
 IQV,IQVIA Holdings Inc
 IR,Ingersoll-Rand Inc
@@ -5534,7 +5538,7 @@ IRBT,Irobot Corp
 IRD,Ocuphire Pharma Inc
 IRDM,Iridium Communications Inc
 IREN,Iris Energy Ltd
-IRET,iREIT - MarketVector Quality REIT Index ETF
+IRET,IREIT(R) - MARKETVECTOR QUALITY REIT INDEX ETF 
 IRIX,IRIDEX Corp
 IRL,New Ireland Fund Inc
 IRM,Iron Mountain Inc
@@ -5613,9 +5617,6 @@ IUSG,ISHARES CORE S&P U.S. GROWTH ETF
 IUSV,ISHARES CORE S&P U.S. VALUE ETF 
 IVA,Inventiva
 IVAL,ALPHA ARCHITECT INTERNATIONAL QUANTITATIVE VALUE ETF 
-IVCA,Investcorp India Acquisition Corp - Class A
-IVCAU,Investcorp India Acquisition Corp - Units (1 Ord Class A & 1/2 War)
-IVCAW,Investcorp India Acquisition Corp - Warrants (01/06/2028)
 IVCPU,AleAnna Inc - Units (1 Ord Share Class A & 1/2 War)
 IVDA,Iveda Solutions Inc
 IVDAW,Iveda Solutions Inc - Warrants (01/04/2027)
@@ -5666,15 +5667,12 @@ IWV,ISHARES RUSSELL 3000 ETF
 IWX,ISHARES RUSSELL TOP 200 VALUE ETF 
 IWY,ISHARES RUSSELL TOP 200 GROWTH ETF 
 IX,Orix Corporation
-IXAQF,IX Acquisition Corp - Class A
 IXC,iShares Global Energy ETF
 IXG,ISHARES GLOBAL FINANCIALS ETF 
 IXHL,Incannex Healthcare Inc
 IXJ,ISHARES GLOBAL HEALTHCARE ETF 
 IXN,ISHARES GLOBAL TECH ETF 
 IXP,ISHARES GLOBAL COMM SERVICES ETF 
-IXQUF,IX Acquisition Corp - Units (1 Ord Class A & 1/2 War)
-IXQWF,IX Acquisition Corp - Warrants (31/07/2028)
 IXUS,ISHARES CORE MSCI TOTAL INTERNATIONAL STOCK ETF 
 IYC,ISHARES U.S. CONSUMER DISCRETIONARY ETF 
 IYE,ISHARES U.S. ENERGY ETF 
@@ -5906,7 +5904,6 @@ JVSAR,JVSPAC Acquisition Corp
 JVSAU,JVSPAC Acquisition Corp - Units (1 Ord & 1 Rts)
 JW,Justworks Inc - Class A
 JWEL,Jowell Global Ltd
-JWN,Nordstrom Inc
 JXG,JX Luxventure Ltd
 JXI,ISHARES GLOBAL UTILITIES ETF 
 JXN,Jackson Financial Inc - Class A
@@ -5920,7 +5917,6 @@ K,Kellanova Company
 K-W,Kellogg Company WhenIssued
 KAI,Kadant Inc
 KALA,Kala Pharmaceuticals Inc
-KALL,KRANESHARES MSCI ALL CHINA INDEX ETF 
 KALU,Kaiser Aluminum Corp
 KALV,KalVista Pharmaceuticals Inc
 KAPA,Kairos Pharma Ltd
@@ -5954,16 +5950,13 @@ KCSH,Sustainable Ultra Short Duration Index ETF
 KD,Kyndryl Holdings Inc
 KDEC,Innovator U.S. Small Cap Power Buffer ETF December
 KDEF,PLUS Korea Defense Industry Index ETF
-KDLY,Kindly MD Inc
-KDLYW,Kindly MD Inc - Warrants (15/05/2029)
 KDNY,Chinook Therapeutics Inc
 KDP,Keurig Dr Pepper Inc
 KDRN,KINGSBARN TACTICAL BOND ETF 
 KE,Kimball Electronics Inc
-KEAT,Keating Active ETF
+KEAT,KEATING ACTIVE ETF 
 KELYA,Kelly Services Inc - Class A
 KELYB,Kelly Services Inc - Class B
-KEM,KraneShares Dynamic Emerging Markets Strategy ETF
 KEMQ,KRANESHARES EMERGING MARKETS CONSUMER TECHNOLOGY INDEX ETF 
 KEMX,KRANESHARES MSCI EMERGING MARKETS EX CHINA INDEX ETF 
 KEN,Kenon Holdings Ltd
@@ -6111,7 +6104,6 @@ KRYS,Krystal Biotech Inc
 KSA,ISHARES MSCI SAUDI ARABIA ETF 
 KSCD,KFA Small Cap Quality Dividend Index ETF
 KSCP,Knightscope Inc - Class A
-KSEA,KRANESHARES ROCKEFELLER OCEAN ENGAGEMENT ETF 
 KSEP,Innovator U.S. Small Cap Power Buffer ETF - September
 KSET,KraneShares Global Carbon Offset Strategy ETF
 KSM,DWS Strategic Municipal Income Trust
@@ -6144,6 +6136,8 @@ KVYO,Klaviyo Inc - Series A
 KW,Kennedy-Wilson Holdings Inc
 KWEB,KRANESHARES CSI CHINA INTERNET ETF 
 KWESW,KWESST Micro Systems Inc - Warrants (29/04/2023)
+KWM,K Wave Media Ltd
+KWMWW,K Wave Media Ltd Warrant
 KWR,Quaker Houghton
 KWT,ISHARES MSCI KUWAIT ETF 
 KXI,ISHARES GLOBAL CONSUMER STAPLES ETF 
@@ -6215,6 +6209,7 @@ LCID,Lucid Group Inc
 LCII,LCI Industries
 LCLG,LOGAN CAPITAL BROAD INNOVATIVE GROWTH ETF 
 LCNB,LCNB Corp
+LCOW,Pacer S&P 500 Quality FCF Aristocrats ETF
 LCR,LEUTHOLD CORE ETF 
 LCTD,BlackRock World ex U.S. Carbon Transition Readiness ETF
 LCTU,BlackRock U.S. Carbon Transition Readiness ETF
@@ -6297,7 +6292,6 @@ LGCF,Themes US Cash Flow Champions ETF
 LGCL,Lucas GC Ltd
 LGCY,Legacy Education Inc
 LGDX,Intech S&P Large Cap Diversified Alpha ETF
-LGF-A,Lions Gate Entertainment Corp - Class A
 LGF-B,Lions Gate Entertainment Corp - Class B
 LGH,HCM DEFENDER 500 INDEX ETF 
 LGHL,Lion Group Holding Ltd
@@ -6402,7 +6396,6 @@ LNC,Lincoln National Corp
 LNC-P-D,Lincoln National Corp
 LND,Brasilagro Companhia Brasileira De Propriedade Agricola
 LNG,Cheniere Energy Inc
-LNGZ,RANGE GLOBAL LNG ECOSYSTEM INDEX ETF 
 LNKB,Linkbancorp Inc
 LNKS,Linkers Industries Ltd - Class A
 LNN,Lindsay Corporation
@@ -6922,6 +6915,7 @@ MNSO,MINISO Group Holding Ltd
 MNST,Monster Beverage Corp
 MNTK,Montauk Renewables Inc
 MNTL,TEMA NEUROSCIENCE AND MENTAL HEALTH ETF 
+MNTN,MNTN Inc - Class A
 MNTS,Momentus Inc - Class A
 MNTSW,Momentus Inc - Warrants (12/08/2026)
 MNY,MoneyHero Ltd - Class A
@@ -7106,6 +7100,7 @@ MUJ,BlackRock MuniHoldings New Jersey Quality Fund Inc
 MULL,GraniteShares 2x Long MU Daily ETF
 MULN,Mullen Automotive Inc
 MUNI,PIMCO INTERMEDIATE MUNICIPAL BOND ACTIVE EXCHANGE-TRADED FUND 
+MUNY,Vanguard New York TaxExempt Bond ETF
 MUR,Murphy Oil Corp
 MURA,Mural Oncology plc
 MURFW,Murphy Canyon Acquisition Corp - Warrants (25/01/2027)
@@ -7183,6 +7178,8 @@ NAGE,Niagen Bioscience Inc
 NAII,Natural Alternatives International Inc
 NAIL,DIREXION DAILY HOMEBUILDERS & SUPPLIES BULL 3X SHARES 
 NAK,Northern Dynasty Minerals Ltd
+NAKA,Kindly MD Inc
+NAKAW,Kindly MD Inc - Warrants (31/05/2029)
 NAMI,Jinxin Technology Holding Company
 NAMS,NewAmsterdam Pharma Company NV
 NAMSW,NewAmsterdam Pharma Company NV - Warrants (15/11/2027)
@@ -7277,6 +7274,7 @@ NEE-P-Q,NextEra Energy Inc. Corporate Units
 NEE-P-R,NextEra Energy Inc Corporate Units expiring 09012019
 NEE-P-S,NextEra Energy Inc 7.299 Corporate Units
 NEE-P-T,NextEra Energy Inc 7.234 Corporate Units
+NEE-P-U,NextEra Energy Inc Series U Junior Subordinated Debentures due June 1 2085
 NEEPN,NextEra Energy Capital Holdings Inc
 NEGG,Newegg Commerce Inc
 NEHC,New Era Helium Inc
@@ -7307,7 +7305,7 @@ NEWTG,NewtekOne Inc
 NEWTH,NewtekOne Inc
 NEWTI,NewtekOne Inc
 NEWTZ,NewtekOne Inc
-NEWZ,StockSnips AI-Powered Sentiment US All Cap ETF
+NEWZ,STOCKSNIPS AI-POWERED SENTIMENT US ALL CAP ETF 
 NEXA,Nexa Resources S.A.
 NEXN,Nexxen International Ltd
 NEXT,NextDecade Corporation
@@ -7575,7 +7573,6 @@ NUMI,Nuveen Municipal Income ETF
 NUMV,NUVEEN ESG MID-CAP VALUE ETF 
 NUO,Nuveen Ohio Quality Municipal Income Fund
 NURE,NUVEEN SHORT-TERM REIT ETF 
-NURO,Neurometrix Inc
 NUS,Nu Skin Enterprises Inc - Class A
 NUSA,NUVEEN ESG 1-5 YEAR U.S. AGGREGATE BOND ETF 
 NUSB,NUVEEN ULTRA SHORT INCOME ETF 
@@ -7627,6 +7624,7 @@ NVTS,Navitas Semiconductor Corp
 NVVE,Nuvve Holding Corp
 NVVEW,Nuvve Holding Corp - Warrants (19/03/2026)
 NVX,Novonix Ltd
+NVYY,GraniteShares YieldBOOST NVDA ETF
 NWBI,Northwest Bancshares Inc
 NWE,NorthWestern Energy Group Inc
 NWFL,Norwood Financial Corp
@@ -7755,6 +7753,7 @@ OEC,Orion S.A
 OEF,ISHARES S&P 100 ETF 
 OESX,Orion Energy Systems Inc
 OEUR,ALPS | O'SHARES EUROPE QUALITY DIVIDEND ETF SHARES
+OFAL,OFA Group
 OFG,OFG Bancorp
 OFIX,Orthofix Medical Inc
 OFLX,Omega Flex Inc
@@ -7808,6 +7807,7 @@ OMFL,INVESCO RUSSELL 1000(R) DYNAMIC MULTIFACTOR ETF
 OMFS,INVESCO RUSSELL 2000(R) DYNAMIC MULTIFACTOR ETF 
 OMH,Ohmyhome Ltd
 OMI,Owens & Minor Inc
+OMSE,OMS Energy Technologies Inc
 ON,ON Semiconductor Corp
 ONB,Old National Bancorp
 ONBPO,Old National Bancorp
@@ -7898,7 +7898,7 @@ OSPN,OneSpan Inc
 OSRH,Bellevue Life Sciences Acquisition Corp
 OSRHW,Bellevue Life Sciences Acquisition Corp - Warrants (09/02/2028)
 OSS,One Stop Systems Inc
-OST,Ostin Technology Group Co Ltd - Class A
+OST,Ostin Technology Group Co Ltd
 OSTX,OS Therapies Inc
 OSUR,Orasure Technologies Inc
 OSW,OneSpaWorld Holdings Ltd
@@ -7951,6 +7951,7 @@ OXSQZ,Oxford Square Capital Corp
 OXUSU,Borealis Foods Inc - Units (1 Ord Class A & 1 War)
 OXY,Occidental Petroleum Corp
 OXY-WS,Occidental Petroleum Corp - Warrants (03/08/2027)
+OYSEU,Oyster Enterprises II Acquisition Corp - Units (1 Ord Cls A & 1 Rts)
 OZ,Belpointe REIT Inc
 OZEM,ROUNDHILL GLP-1 & WEIGHT LOSS ETF 
 OZK,Bank OZK
@@ -8001,7 +8002,6 @@ PATN,Pacer Nasdaq International Patent Leaders ETF
 PAUG,Innovator U.S. Equity Power Buffer ETF - August
 PAVE,GLOBAL X U.S. INFRASTRUCTURE DEVELOPMENT ETF 
 PAVM,PAVmed Inc
-PAVMZ,PAVmed Inc - Warrants - Series Z (30/04/2025)
 PAVS,Paranovus Entertainment Technology Ltd - Class A
 PAWZ,PROSHARES PET CARE ETF 
 PAX,Patria Investments Ltd - Class A
@@ -8050,6 +8050,7 @@ PBUS,INVESCO MSCI USA ETF
 PBW,Invesco WilderHill Clean Energy ETF
 PBYI,Puma Biotechnology Inc
 PC,Premium Catering (Holdings) Ltd
+PCAPU,ProCap Acquisition Corp - Units (1 Ord Share Class A & 1/3 War)
 PCAR,Paccar Inc
 PCB,PCB Bancorp.
 PCCE,Polen Capital China Growth ETF
@@ -8122,6 +8123,7 @@ PED,PEDEVCO Corp
 PEG,Public Service Enterprise Group Inc
 PEGA,Pegasystems Inc
 PEJ,Invesco Leisure and Entertainment ETF
+PELIU,Pelican Acquisition Corp - Units (1 Ord Shs & 1 Rts)
 PEMX,Putnam Emerging Markets ex-China ETF
 PEN,Penumbra Inc
 PENG,Penguin Solutions Inc
@@ -8183,7 +8185,6 @@ PG,Procter & Gamble Company
 PGC,Peapack-Gladstone Financial Corp
 PGEN,Precigen Inc
 PGF,Invesco Financial Preferred ETF
-PGHL,Primega Group Holdings Ltd
 PGHY,INVESCO GLOBAL EX-US HIGH YIELD CORPORATE BOND ETF 
 PGJ,Invesco Golden Dragon China ETF
 PGNY,Progyny Inc
@@ -8245,7 +8246,6 @@ PIO,INVESCO GLOBAL WATER ETF
 PIPR,Piper Sandler Co`s
 PIRS,Pieris Pharmaceuticals Inc
 PIT,VANECK COMMODITY STRATEGY ETF 
-PIXY,ShiftPixy Inc
 PIZ,INVESCO DORSEY WRIGHT DEVELOPED MARKETS MOMENTUM ETF 
 PJAN,Innovator U.S. Equity Power Buffer ETF - January
 PJBF,PGIM JENNISON BETTER FUTURE ETF 
@@ -8329,6 +8329,7 @@ PMT,Pennymac Mortgage Investment Trust
 PMT-P-A,Pennymac Mortgage Investment Trust
 PMT-P-B,Pennymac Mortgage Investment Trust
 PMT-P-C,Pennymac Mortgage Investment Trust
+PMTRU,Perimeter Acquisition Corp I - Units (1 Ord Cls A & 1/2 War)
 PMTS,CPI Card Group Inc
 PMTU,Pennymac Mortgage Investment Trust
 PMTV,Pennymac Mortgage Investment Trust
@@ -8557,10 +8558,8 @@ PTLE,PTL Ltd
 PTLO,Portillos Inc - Class A
 PTMC,PACER TRENDPILOT US MID CAP ETF 
 PTMN,Portman Ridge Finance Corp
-PTN,Palatin Technologies Inc
 PTNQ,PACER TRENDPILOT 100 ETF 
 PTON,Peloton Interactive Inc - Class A
-PTPI,Petros Pharmaceuticals Inc
 PTRB,PGIM TOTAL RETURN BOND ETF 
 PTWOU,SBC Medical Group Holdings Inc - Units (1 Ord Class A & 1 War)
 PTY,PIMCO Corporate & Income Opportunity Fund
@@ -8700,6 +8699,7 @@ QPX,ADVISORSHARES Q DYNAMIC GROWTH ETF
 QQA,Invesco QQQ Income Advantage ETF
 QQEW,FIRST TRUST NASDAQ-100 EQUAL WEIGHTED INDEX FUND 
 QQH,HCM DEFENDER 100 INDEX ETF 
+QQHG,Invesco QQQ Hedged Advantage ETF
 QQJG,Invesco ESG NASDAQ Next Gen 100 ETF
 QQLV,Invesco QQQ Low Volatility ETF
 QQMG,Invesco ESG NASDAQ 100 ETF
@@ -8724,6 +8724,8 @@ QRHC,Quest Resource Holding Corp
 QRMI,GLOBAL X NASDAQ 100 RISK MANAGED INCOME ETF 
 QRVO,Qorvo Inc
 QS,QuantumScape Corp - Class A
+QSEA,Quartzsea Acquisition Corp
+QSEAR,Quartzsea Acquisition Corp
 QSEAU,Quartzsea Acquisition Corp - Units (1 Ord Shs & 1 Rts)
 QSG,QuantaSing Group Ltd
 QSI,Quantum-Si Incorporated - Class A
@@ -8895,9 +8897,6 @@ RELY,Remitly Global Inc
 REM,iShares Mortgage Real Estate ETF
 REMX,VANECK RARE EARTH AND STRATEGIC METALS ETF 
 RENB,Renovaro Biosciences Inc
-RENE,Cartesian Growth Corp II - Class A
-RENEU,Cartesian Growth Corp II - Units (1 Ord Share Class A & 1/3 War)
-RENEW,Cartesian Growth Corp II - Warrants(12/07/2028)
 RENT,Rent the Runway Inc - Class A
 REPL,Replimune Group Inc
 REPX,Riley Exploration Permian Inc
@@ -9145,6 +9144,7 @@ RSST,RETURN STACKED(R) U.S. STOCKS & MANAGED FUTURES ETF
 RSSY,Return Stacked U.S. Stocks & Futures Yield ETF
 RSVR,Reservoir Media Inc
 RSVRW,Reservoir Media Inc - Warrants (28/07/2026)
+RTACU,Renatus Tactical Acquisition Corp I - Units (1 Ord Cls A & 1/2 War)
 RTAI,RAREVIEW TAX ADVANTAGED INCOME ETF 
 RTC,Baijiayun Group Ltd - Class A
 RTH,VANECK RETAIL ETF 
@@ -9277,7 +9277,7 @@ SBB,PROSHARES SHORT SMALLCAP600
 SBC,SBC Medical Group Holdings Inc
 SBCF,Seacoast Banking Corp Of Florida
 SBCWW,SBC Medical Group Holdings Inc - Warrants (18/09/2029)
-SBET,SharpLink Gaming Inc
+SBET,SharpLink Gaming Ltd
 SBEV,Splash Beverage Group Inc
 SBEV-WS,Splash Beverage Group Inc - Warrants (01/01/9999)
 SBFG,SB Financial Group Inc
@@ -9428,6 +9428,7 @@ SELV,SEI Enhanced Low Volatility U.S. Large Cap ETF
 SELX,Semilux International Ltd
 SEM,Select Medical Holdings Corporation
 SEM-W,Select Medical Holdings Corporation WhenIssued
+SEMG,SUNCOAST SELECT GROWTH ETF 
 SEMI,Columbia Seligman Semiconductor and Technology ETF
 SEMR,SEMrush Holdings Inc - Class A
 SENEA,Seneca Foods Corp - Class A
@@ -9727,7 +9728,6 @@ SNAP,Snap Inc - Class A
 SNAV,MOHR SECTOR NAV ETF 
 SNBR,Sleep Number Corp
 SNCR,Synchronoss Technologies Inc
-SNCRL,Synchronoss Technologies Inc
 SNCY,Sun Country Airlines Holdings Inc
 SND,Smart Sand Inc
 SNDA,Sonida Senior Living Inc
@@ -9805,6 +9805,7 @@ SOQ,Sonde Resources Corp
 SOR,Source Capital Inc
 SOS,SOS Ltd
 SOTK,Sono-Tek Corp
+SOUL-R,Soulpower Acquisition Corporation Rights each right entitling the holder to receive onetenth 110 of one Class A Ordinary Share
 SOUL-U,Soulpower Acquisition Corp - Units (1 Ord Cls A & 1/2 War)
 SOUN,SoundHound AI Inc - Class A
 SOUNW,SoundHound AI Inc - Warrants (26/04/2027)
@@ -9910,7 +9911,7 @@ SPVM,Invesco Russell Top 200 Pure Value ETF
 SPVU,INVESCO S&P 500 ENHANCED VALUE ETF 
 SPWH,Sportsman`s Warehouse Holdings Inc
 SPWO,SP FUNDS S&P WORLD (EX-US) ETF 
-SPWR,
+SPWR,Complete Solaria Inc
 SPWRW,Complete Solaria Inc - Warrants (31/07/2028)
 SPXC,SPX Technologies Inc
 SPXE,PROSHARES S&P 500 EX-ENERGY ETF 
@@ -10048,6 +10049,7 @@ STRS,Stratus Properties Inc
 STRT,Strattec Security Corp
 STRV,STRIVE 500 ETF 
 STRW,Strawberry Fields Reit Inc
+STRZ,Starz Entertainment Corp
 STSB,STANCE SUSTAINABLE BETA ETF 
 STSS,Sharps Technology Inc
 STSSW,Sharps Technology Inc - Warrants (13/04/2027)
@@ -10161,6 +10163,8 @@ SYTAW,Siyata Mobile Inc - Warrants (25/09/2025)
 SYY,Sysco Corp
 SZK,PROSHARES ULTRASHORT CONSUMER STAPLES 
 SZNE,PACER CFRA-STOVALL EQUAL WEIGHT SEASONAL ROTATION ETF 
+SZZL,Sizzle Acquisition Corp II - Class A
+SZZLR,Sizzle Acquisition Corp II
 SZZLU,Sizzle Acquisition Corp II - Units (1 Ord Cls A & 1 Rts)
 T,AT&T Inc
 T-P-A,AT&T Inc
@@ -10399,9 +10403,6 @@ TKNO,Alpha Teknova Inc
 TKO,TKO Group Holdings Inc - Class A
 TKR,Timken Company
 TLF,Tandy Leather Factory Inc
-TLGY,TLGY Acquisition Corp - Class A
-TLGYU,TLGY Acquisition Corp - Units (1 Ord Class A & 1/2 War)
-TLGYW,TLGY Acquisition Corp - Warrants (09/11/2026)
 TLH,ISHARES 10-20 YEAR TREASURY BOND ETF 
 TLK,Telkom Indonesia (Persero) Tbk PT
 TLPH,Talphera Inc
@@ -10471,7 +10472,7 @@ TOLL,Tema Monopolies and Oligopolies ETF
 TOLZ,PROSHARES DJ BROOKFIELD GLOBAL INFRASTRUCTURE ETF 
 TOMZ,TOMI Environmental Solutions Inc
 TOON,Kartoon Studios Inc
-TOP,TOP Financial Group Ltd
+TOP,TOP Financial Group Ltd - Class A
 TOPC,iShares S&P 500 3 Capped ETF
 TOPP,Toppoint Holdings Inc
 TOPS,Top Ships Inc
@@ -10509,7 +10510,7 @@ TPSC,TIMOTHY PLAN US SMALL CAP CORE ETF
 TPST,Tempest Therapeutics Inc
 TPTA,Terra Property Trust Inc
 TPVG,TriplePoint Venture Growth BDC Corp
-TPYP,TORTOISE NORTH AMERICAN PIPELINE FUND 
+TPYP,Tortoise North American Pipeline Fund ETF
 TPZ,Tortoise Power and Energy Infrastructure Fund Inc
 TQQQ,PROSHARES ULTRAPRO QQQ 
 TQQY,GraniteShares YieldBOOST QQQ ETF
@@ -10604,7 +10605,6 @@ TSPA,T. ROWE PRICE U.S. EQUITY RESEARCH ETF
 TSPY,TAPPALPHA SPY GROWTH & DAILY INCOME ETF 
 TSQ,Townsquare Media Inc - Class A
 TSSI,TSS Inc
-TSVT,2seventy bio Inc
 TSYY,GraniteShares YieldBOOST TSLA ETF
 TT,Trane Technologies plc - Class A
 TTAM,Titan America SA
@@ -10635,7 +10635,10 @@ TUSI,TOUCHSTONE ULTRA SHORT INCOME ETF
 TUSK,Mammoth Energy Services Inc
 TUYA,Tuya Inc
 TV,Grupo Televisa SAB
+TVA,Texas Ventures Acquisition III Corp - Class A
 TVACU,Texas Ventures Acquisition III Corp - Units (1 Ord Cls A & 1/2 War)
+TVACW,Texas Ventures Acquisition III Corp - Warrants (23/04/2030)
+TVAIU,Thayer Ventures Acquisition Corp II - Units (1 Ord Cls A & 1 Rts)
 TVAL,T. ROWE PRICE VALUE ETF 
 TVC,Tennessee Valley Authority
 TVE,Tennessee Valley Authority
@@ -10661,6 +10664,7 @@ TWO,Two Harbors Investment Corp
 TWO-P-A,Two Harbors Investment Corp
 TWO-P-B,Two Harbors Investment Corp
 TWO-P-C,Two Harbors Investment Corp
+TWOD,Two Harbors Investment Corp
 TWST,Twist Bioscience Corp
 TX,Ternium S.A.
 TXG,10x Genomics Inc - Class A
@@ -10708,7 +10712,7 @@ UBSI,United Bankshares Inc
 UBT,PROSHARES ULTRA 20+ YEAR TREASURY 
 UBX,Unity Biotechnology Inc
 UBXG,U-BX Technology Ltd
-UCAR,U Power Ltd
+UCAR,U Power Ltd - Class A
 UCB,United Community Banks Inc
 UCB-P-I,United Community Banks Inc
 UCBI,
@@ -10968,7 +10972,6 @@ VCLN,VIRTUS DUFF & PHELPS CLEAN ENERGY ETF
 VCLT,VANGUARD LONG-TERM CORPORATE BOND INDEX FUND ETF SHARES
 VCR,VANGUARD CONSUMER DISCRETIONARY INDEX FUND ETF SHARES
 VCRB,VANGUARD CORE BOND ETF ETF SHARES
-VCSA,Vacasa Inc - Class A
 VCSH,VANGUARD SHORT-TERM CORPORATE BOND INDEX FUND ETF SHARES
 VCTR,Victory Capital Holdings Inc - Class A
 VCV,Invesco California Value Municipal Income Trust
@@ -11148,12 +11151,10 @@ VRIG,INVESCO VARIABLE RATE INVESTMENT GRADE ETF
 VRME,VerifyMe Inc
 VRMEW,VerifyMe Inc - Warrants (17/06/2025)
 VRMMQ,Vroom Inc
-VRN,Veren Inc
 VRNA,Verona Pharma Plc
 VRNS,Varonis Systems Inc
 VRNT,Verint Systems Inc
 VRP,INVESCO VARIABLE RATE PREFERRED ETF 
-VRPX,Virpax Pharmaceuticals Inc
 VRRM,Verra Mobility Corp - Class A
 VRSK,Verisk Analytics Inc
 VRSN,Verisign Inc
@@ -11191,6 +11192,7 @@ VTC,VANGUARD TOTAL CORPORATE BOND ETF ETF SHARES
 VTEB,VANGUARD TAX-EXEMPT BOND INDEX FUND ETF SHARES
 VTEC,VANGUARD CALIFORNIA TAX-EXEMPT BOND ETF ETF SHARES
 VTEI,VANGUARD INTERMEDIATE-TERM TAX-EXEMPT BOND ETF ETF SHARES
+VTEL,Vanguard LongTerm TaxExempt Bond ETF
 VTES,VANGUARD SHORT-TERM TAX-EXEMPT BOND ETF ETF SHARES
 VTEX,Vtex - Class A
 VTGN,VistaGen Therapeutics Inc
@@ -11270,6 +11272,7 @@ WBS,Webster Financial Corp
 WBS-P-F,Webster Financial Corp
 WBS-P-G,Webster Financial Corp
 WBTN,Webtoon Entertainment Inc
+WBUYD,Webuy Global Ltd - Class A
 WBX,Wallbox N.V - Class A
 WCBR,WISDOMTREE CYBERSECURITY FUND 
 WCC,Wesco International Inc
@@ -11304,6 +11307,7 @@ WELL,Welltower Inc
 WEN,Wendy`s Co - Class A
 WENA,Anew Medical Inc
 WENAW,Anew Medical Inc - Warrants(21/06/2029)
+WENNU,Wen Acquisition Corp - Units (1 Ord Cls A & 1/2 War)
 WERN,Werner Enterprises Inc
 WES,Western Midstream Partners LP
 WEST,Westrock Coffee Company
@@ -11347,10 +11351,6 @@ WINC,WESTERN ASSET SHORT DURATION INCOME ETF
 WING,Wingstop Inc
 WINN,HARBOR LONG-TERM GROWERS ETF 
 WINT,Windtree Therapeutics Inc
-WINV,WinVest Acquisition Corp
-WINVR,WinVest Acquisition Corp
-WINVU,WinVest Acquisition Corp - Units (1 1 Rights & 1 War)
-WINVW,WinVest Acquisition Corp - Warrants (09/08/2026)
 WIP,SPDR(R) FTSE INTERNATIONAL GOVERNMENT INFLATION-PROTECTED BOND ETF 
 WISE,THEMES GENERATIVE ARTIFICIAL INTELLIGENCE ETF 
 WIT,Wipro Ltd
@@ -11380,7 +11380,6 @@ WM,Waste Management Inc
 WMB,Williams Cos Inc
 WMG,Warner Music Group Corp - Class A
 WMK,Weis Markets Inc
-WMPN,William Penn Bancorporation
 WMS,Advanced Drainage Systems Inc
 WMT,Walmart Inc
 WNC,Wabash National Corp
@@ -11491,6 +11490,7 @@ XBJL,Innovator U.S. Equity Accelerated 9 Buffer ETF - July
 XBOC,Innovator U.S. Equity Accelerated 9 Buffer ETF - October
 XBP,XBP Europe Holdings Inc
 XBPEW,XBP Europe Holdings Inc - Warrants (30/11/2028)
+XBTY,GraniteShares YieldBOOST Bitcoin ETF
 XC,WISDOMTREE EMERGING MARKETS EX-CHINA FUND 
 XCCC,BONDBLOXX CCC RATED USD HIGH YIELD CORPORATE BOND ETF 
 XCEM,COLUMBIA EM CORE EX-CHINA ETF 
@@ -11610,6 +11610,8 @@ XRAY,DENTSPLY Sirona Inc
 XRLV,INVESCO S&P 500 EX-RATE SENSITIVE LOW VOLATILITY ETF 
 XRLX,FUNDX CONSERVATIVE ETF 
 XRMI,GLOBAL X S&P 500 RISK MANAGED INCOME ETF 
+XRPI,Volatility Shares Trust XRP ETF
+XRPT,Volatility Shares Trust XRP 2X ETF
 XRT,SPDR(R) S&P(R) RETAIL ETF 
 XRTX,XORTX Therapeutics Inc
 XRX,Xerox Holdings Corp
@@ -11662,6 +11664,7 @@ YANG,DIREXION DAILY FTSE CHINA BEAR 3X SHARES
 YB,Yuanbao Inc
 YBIT,YIELDMAXTM BITCOIN OPTION INCOME STRATEGY ETF 
 YBTC,ROUNDHILL BITCOIN COVERED CALL STRATEGY ETF 
+YCBD,cbdMD Inc
 YCL,ProShares Ultra Yen 2x Shares
 YCS,ProShares UltraShort Yen -2x Shares
 YDEC,FT VEST INTERNATIONAL EQUITY MODERATE BUFFER ETF - DECEMBER 
@@ -11725,11 +11728,10 @@ ZBIO,Zenas Biopharma Inc
 ZBRA,Zebra Technologies Corp - Class A
 ZBZX,Bats Listed Test
 ZBZZT,ZBZZT
-ZCAR,Zoomcar Holdings Inc
-ZCARW,Zoomcar Holdings Inc - Warrants (28/12/2028)
 ZCMD,Zhongchao Inc - Class A
 ZCZZT,Super Montage IPO X Tst Security SM IPO X 3
 ZD,Ziff Davis Inc
+ZDAI,Primega Group Holdings Ltd
 ZDEK,Innovator Equity Defined Protection ETF 1 Yr December
 ZDGE,Zedge Inc - Class B
 ZECP,ZACKS EARNINGS CONSISTENT PORTFOLIO ETF 
@@ -11747,7 +11749,6 @@ ZGEN,The Generation Z ETF
 ZGN,Ermenegildo Zegna N.V.
 ZH,Zhihu Inc
 ZHDG,ZEGA BUY AND HEDGE ETF 
-ZI,ZoomInfo Technologies Inc
 ZIG,THE ACQUIRERS FUND 
 ZIM,Zim Integrated Shipping Services Ltd
 ZIMV,ZimVie Inc

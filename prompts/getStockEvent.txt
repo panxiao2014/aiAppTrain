@@ -26,9 +26,13 @@ Your final answer MUST be written in the following JSON format:
   ]
 }}
 
+And then you should save this json format string.
+
 Note:
 - "total_number" is the total number of news that are related to stock price change.
 - for the "summary" field, just copy the news desciption from what the function tool returns.
 - if there are mutliple stock related news for the same day, use your judge to select only one of them for that date.
 - if you can not find any stock price change event, return a json data with an empty list for field "stock_price_events"
 - your final output MUST ONLY contain the json data. DO NOT add any other words.
+
+Once you have saved the json string, you should hand off control to the EventFormatAgent to format that string.

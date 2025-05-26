@@ -22,11 +22,11 @@ def get_http_request(url: str, params: Optional[dict] = None) -> Optional[Dict[s
         return None
 
     except ConnectionError:
-        logger.warning("Failed to connect to the server. Check your network or URL.")
+        logger.warning(f"Failed to connect to the server {url}")
         return None
 
     except Timeout:
-        logger.warning(f"Request timed out.")
+        logger.warning(f"Request timed out for {url}")
         return None
 
     except RequestException as e:
