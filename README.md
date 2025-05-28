@@ -41,11 +41,15 @@ This application let user choose a company by its name or stock symbol, then spe
 (*Note: the maximum days to look for is 30 days due to limitation of free API service.)
 
 ### 💡Example output
+
 **Select company:**
+
 ![company!](/imgs/nike.png)
 
 **Enter days:**
+
 ![days!](/imgs/days.png)
 
 **Final result:**
+
 ![result!](/imgs/summary.png)
