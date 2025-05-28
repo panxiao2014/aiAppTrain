@@ -166,6 +166,9 @@ def format_stock_event_string(stockEvent: str) -> PrettyTable:
     #get the stock price events
     stock_price_events = stockEvent["stock_price_events"]
 
+    #sort the stock price events by time
+    stock_price_events.sort(key=lambda x: x["time"])
+
     #format the list of events into a table, the table has four columns: time, summary, previous, close
     table = PrettyTable()
     table.field_names = ["Time", "Summary", "Previous", "Close"]
@@ -212,7 +215,7 @@ async def save_stock_event_to_cache(stockEvent: str):
     keyGenerator = StockNewsKeyGenerator()
     stockNewsCache = CacheUtil(100, 'data/stockNewsCache.json', keyGenerator)
     await stockNewsCache.load_cache()
-    
+
     await stockNewsCache.add(stockEvent, stock_symbol, past_days)
     logger.info(f"Added stock news to cache by: {stock_symbol}, {past_days}")
     return
