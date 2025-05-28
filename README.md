@@ -39,3 +39,13 @@ I use DeepSeek as the LLM, you can choose any other model.
 This application let user choose a company by its name or stock symbol, then specify a number as the days. The application will search all company related news within that past days, sift out any news that are relevant to stock price change. It will then get the stock price before and after that event happened. This application helps people understand how an event will affect a company's stock price.
 
 (*Note: the maximum days to look for is 30 days due to limitation of free API service.)
+
+### 💡Example output
+**Select company:**
+![company!](/imgs/nike.png)
+
+**Enter days:**
+![days!](/imgs/days.png)
+
+**Final result:**
+![result!](/imgs/summary.png)

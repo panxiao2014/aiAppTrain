@@ -6,6 +6,7 @@ import requests
 import finnhub
 from utils.httpUtil import get_http_request
 from utils.logUtil import setup_logger
+from utils.cacheUtil import CacheUtil, StockNewsKeyGenerator
 
 logger = setup_logger("finUtil")
 
@@ -123,7 +124,7 @@ def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[O
     else:
         workdayData = workdayData["4. close"]
     if(not previousWorkdayData):
-        logger.warning(f"Could not find stock price for {symbol} on {previousWorkdayData}")
+        logger.warning(f"Could not find stock price for {symbol} on {previousWorkday}")
         previousWorkdayData = None
     else:
         previousWorkdayData = previousWorkdayData["4. close"]
@@ -134,18 +135,20 @@ def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[O
     return (workdayData, previousWorkdayData)
 
 
-def format_event_string(stockEvent: str) -> PrettyTable:
+def format_stock_event_string(stockEvent: str) -> PrettyTable:
     """
     For a stock event representd in json format string, format it to a table.
 
     Args:
         stockEvent(str) : The stock event representd in json format string. It has the following format:
             {{
+            "stock_symbol": companyTicker,
+            "past_days": pastDays,
             "stock_total_events": total_number,
             "stock_price_events": [
                 {{
                 "time": "yyyy-mm-dd",
-                "summary": "breif summary of the event",
+                "summary": "brief summary of the event",
                 "previous": "the stock price of the previous workday. If price is not available, return None",
                 "close": "the stock price of the closest workday. If price is not available, return None"
                 }}
@@ -155,25 +158,64 @@ def format_event_string(stockEvent: str) -> PrettyTable:
     Returns:
         A formatted table of the stock event
     """
-    logger.info(f"Formatting stock event string: {stockEvent}")
-
     #get the json format string
     stockEvent = json.loads(stockEvent)
+
+    logger.info(f"Formatting stock event string: {stockEvent}")
+
     #get the stock price events
     stock_price_events = stockEvent["stock_price_events"]
 
     #format the list of events into a table, the table has four columns: time, summary, previous, close
     table = PrettyTable()
-    table.field_names = ["time", "summary", "previous", "close"]
-    table._max_width = {"summary": 50}  # set the max width of "summary" column to 50
+    table.field_names = ["Time", "Summary", "Previous", "Close"]
+    table._max_width = {"Summary": 50}  # set the max width of "summary" column to 50
     table.hrules = True  # enable horizontal rules
     table.wrap_lines = True  # enable auto wrap of long string
-    table.align["summary"] = "l"  # align "summary" column to left
+    table.align["Summary"] = "l"  # align "summary" column to left
     for event in stock_price_events:
         table.add_row([event["time"], event["summary"], event["previous"], event["close"]])
 
     print(table)
     return table
+
+
+async def save_stock_event_to_cache(stockEvent: str):
+    """
+    For a stock event representd in json format string, save it to a cache file.
+
+    Args:
+        stockEvent(str) : The stock event representd in json format string. It has the following format:
+            {{
+            "stock_symbol": companyTicker,
+            "past_days": pastDays,
+            "stock_total_events": total_number,
+            "stock_price_events": [
+                {{
+                "time": "yyyy-mm-dd",
+                "summary": "brief summary of the event",
+                "previous": "the stock price of the previous workday. If price is not available, return None",
+                "close": "the stock price of the closest workday. If price is not available, return None"
+                }}
+            ]
+            }}
+    """
+    stockEvent = json.loads(stockEvent)
+
+    #if stock_price_events is empty, then don't save to cache:
+    if(len(stockEvent["stock_price_events"]) == 0):
+        return
+    
+    #save to cache:
+    stock_symbol = stockEvent["stock_symbol"]
+    past_days = stockEvent["past_days"]
+    keyGenerator = StockNewsKeyGenerator()
+    stockNewsCache = CacheUtil(100, 'data/stockNewsCache.json', keyGenerator)
+    await stockNewsCache.load_cache()
+    
+    await stockNewsCache.add(stockEvent, stock_symbol, past_days)
+    logger.info(f"Added stock news to cache by: {stock_symbol}, {past_days}")
+    return
 
 
 
@@ -185,5 +227,5 @@ if __name__ == "__main__":
 
     event_string = """ {"stock_total_events":1,"stock_price_events":[{"time":"2025-05-23","summary":"Oracle will reportedly buy $40 billion worth of Nvidia chips to power the first Stargate project, a new data center in Abilene, Texas. The company will buy 400,000 of Nvidia latest 'superchips' for training and running artificial intelligence (AI) systems...","previous":"132.8300","close":"131.2900"}]}"""
 
-    table = format_event_string(event_string)
+    table = format_stock_event_string(event_string)
     print(table)

@@ -15,11 +15,13 @@ Your third goal is to get the stock price for the closest workday and the previo
 
 Your final answer MUST be written in the following JSON format:
 {{
+  "stock_symbol": companyTicker,
+  "past_days": pastDays,
   "stock_total_events": total_number,
   "stock_price_events": [
     {{
       "time": "yyyy-mm-dd",
-      "summary": "breif summary of the event",
+      "summary": "brief summary of the event",
       "previous": "the stock price of the previous workday. If price is not available, return None",
       "close": "the stock price of the closest workday. If price is not available, return None"
     }}
@@ -29,6 +31,8 @@ Your final answer MUST be written in the following JSON format:
 And then you should save this json format string.
 
 Note:
+- "companyTicker" is the company stock symbol.
+- "pastDays" is the past days to look up for.
 - "total_number" is the total number of news that are related to stock price change.
 - for the "summary" field, just copy the news desciption from what the function tool returns.
 - if there are mutliple stock related news for the same day, use your judge to select only one of them for that date.
