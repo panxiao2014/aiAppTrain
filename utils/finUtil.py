@@ -4,6 +4,7 @@ from prettytable import PrettyTable
 from typing import Optional, Tuple
 import requests
 import finnhub
+from llama_index.core.workflow import Context
 from utils.httpUtil import get_http_request
 from utils.logUtil import setup_logger
 from utils.cacheUtil import CacheUtil, StockNewsKeyGenerator
@@ -135,33 +136,9 @@ def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[O
     return (workdayData, previousWorkdayData)
 
 
-def format_stock_event_string(stockEvent: str) -> PrettyTable:
-    """
-    For a stock event representd in json format string, format it to a table.
-
-    Args:
-        stockEvent(str) : The stock event representd in json format string. It has the following format:
-            {{
-            "stock_symbol": companyTicker,
-            "past_days": pastDays,
-            "stock_total_events": total_number,
-            "stock_price_events": [
-                {{
-                "time": "yyyy-mm-dd",
-                "summary": "brief summary of the event",
-                "previous": "the stock price of the previous workday. If price is not available, return None",
-                "close": "the stock price of the closest workday. If price is not available, return None"
-                }}
-            ]
-            }}
-
-    Returns:
-        A formatted table of the stock event
-    """
+def format_stock_event_string_to_table(stockEvent: str) -> PrettyTable:
     #get the json format string
     stockEvent = json.loads(stockEvent)
-
-    logger.info(f"Formatting stock event string: {stockEvent}")
 
     #get the stock price events
     stock_price_events = stockEvent["stock_price_events"]
@@ -181,6 +158,43 @@ def format_stock_event_string(stockEvent: str) -> PrettyTable:
 
     print(table)
     return table
+
+
+async def format_stock_event_string(ctx: Context) -> PrettyTable:
+    """
+    For a stock event representd in json format string, format it to a table.
+
+    Args:
+        ctx(Context) : The context between multi-agents. The stock event is saved in the context in the following format:
+        stockEvent(str) : The stock event representd in json format string. It has the following format:
+            {{
+            "stock_symbol": companyTicker,
+            "past_days": pastDays,
+            "stock_total_events": total_number,
+            "stock_price_events": [
+                {{
+                "time": "yyyy-mm-dd",
+                "summary": "brief summary of the event",
+                "previous": "the stock price of the previous workday. If price is not available, return None",
+                "close": "the stock price of the closest workday. If price is not available, return None"
+                }}
+            ]
+            }}
+
+    Returns:
+        A formatted table of the stock event
+    """
+    current_state = await ctx.get("state")
+    if "stock_events" not in current_state:
+        logger.error("No stock events found in context.")
+        return None
+
+    stockEvent = current_state["stock_events"]
+    logger.info(f"Formatting stock event for {stockEvent['stock_symbol']}")
+    formatTable = format_stock_event_string_to_table(stockEvent)
+    return formatTable
+    
+
 
 
 async def save_stock_event_to_cache(stockEvent: str):
@@ -230,5 +244,4 @@ if __name__ == "__main__":
 
     event_string = """ {"stock_total_events":1,"stock_price_events":[{"time":"2025-05-23","summary":"Oracle will reportedly buy $40 billion worth of Nvidia chips to power the first Stargate project, a new data center in Abilene, Texas. The company will buy 400,000 of Nvidia latest 'superchips' for training and running artificial intelligence (AI) systems...","previous":"132.8300","close":"131.2900"}]}"""
 
-    table = format_stock_event_string(event_string)
-    print(table)
+    table = format_stock_event_string_to_table(event_string)

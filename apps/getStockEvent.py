@@ -3,7 +3,7 @@ import asyncio
 from typing import Tuple
 from utils.companyCompleter import CompanyInput
 from utils.newsUtil import get_past_news
-from utils.finUtil import get_stock_prices, get_company_list, format_stock_event_string, save_stock_event_to_cache
+from utils.finUtil import get_stock_prices, get_company_list, format_stock_event_string, save_stock_event_to_cache, format_stock_event_string_to_table
 from utils.timeUtil import find_workdays
 from llama_index.llms.deepseek import DeepSeek
 from llama_index.core.agent.workflow import AgentWorkflow
@@ -65,22 +65,6 @@ async def save_events(ctx: Context, stockEvents: str) -> str:
     current_state["stock_events"] = stockEvents
     await ctx.set("state", current_state)
     return "Stock events saved."
-
-
-
-async def get_events(ctx: Context) -> str:
-    """
-    Useful for getting stock events. The events are representd in a string with json format.
-    
-    """
-    current_state = await ctx.get("state")
-    if "stock_events" not in current_state:
-        logger.error("No stock events found in context.")
-        return ""
-    
-    logger.info(f"Getting stock events from context: {current_state['stock_events']}")
-
-    return current_state["stock_events"]
     
 
 
@@ -92,7 +76,7 @@ async def myWorkFlow(systemPromt, formatPrompt, cachePrompt, llm, toolList):
     queryResult = await stockNewsCache.get(companyTicker, pastDays)
     if(queryResult != None):
         logger.info(f"Found stock news in cache by: {companyTicker}, {pastDays}")
-        format_stock_event_string(queryResult)
+        format_stock_event_string_to_table(queryResult)
         return
 
     stock_event_agent = FunctionAgent(
@@ -109,7 +93,7 @@ async def myWorkFlow(systemPromt, formatPrompt, cachePrompt, llm, toolList):
         description="Useful for calling a tool to format the stock price change related news into a table",
         system_prompt=formatPrompt,
         llm=llm,
-        tools=[get_events, format_stock_event_string]
+        tools=[format_stock_event_string]
     )
 
     cache_event_agent = FunctionAgent(
@@ -117,7 +101,7 @@ async def myWorkFlow(systemPromt, formatPrompt, cachePrompt, llm, toolList):
         description="Useful for saving the stock price change related news to a cache file",
         system_prompt=cachePrompt,
         llm=llm,
-        tools=[get_events, save_stock_event_to_cache]
+        tools=[save_stock_event_to_cache]
     )
 
     agent_workflow = AgentWorkflow(
