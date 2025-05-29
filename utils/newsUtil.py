@@ -1,8 +1,10 @@
 from typing import List, Dict
 import requests
 from datetime import datetime, timedelta
+from llama_index.core.workflow import Context
 from utils.logUtil import setup_logger
 from utils.httpUtil import get_http_request
+from utils.finUtil import load_stock_price_from_cache
 
 logger = setup_logger("newsUtil")
 
@@ -24,12 +26,13 @@ def get_news_sources() -> None:
 
 
 
-def get_past_news(ticker: str, company: str, pastDays: int) -> List[Dict[str, str]]:
+async def get_past_news(ctx: Context, ticker: str, company: str, pastDays: int) -> List[Dict[str, str]]:
     """
     Retrieves a list of news articles about a company based on the ticker and company name
     published in the past 'pastDays' days.
 
     Args:
+    ctx(Context) : The context between multi-agents.
     ticker (str): The ticker symbol of the company.
     company (str): The name of the company.
     pastDays (int): The number of days in the past to retrieve news from.
@@ -71,6 +74,14 @@ def get_past_news(ticker: str, company: str, pastDays: int) -> List[Dict[str, st
     articles = httpData['articles']
     for article in articles:
         newsList.append({"date": article["publishedAt"][0:10], "news": article["description"]})
+
+    #load stock price cache and save to context, so the next steps could retrieve it:
+    stockPriceCache = await load_stock_price_from_cache()
+    current_state = await ctx.get("state")
+
+    if "stock_price_cache" not in current_state:
+        current_state["stock_price_cache"] = stockPriceCache
+        await ctx.set("state", current_state)
 
     logger.info(f"Get {len(newsList)} originnal news")
     return newsList

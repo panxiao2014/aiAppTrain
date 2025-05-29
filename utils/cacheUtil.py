@@ -54,7 +54,7 @@ class CacheUtil:
         return
 
 
-    async def _save_cache(self):
+    async def save_to_file(self):
         """Save cache to file."""
         async with self._lock:
             try:
@@ -107,8 +107,6 @@ class CacheUtil:
             elif len(self.cache) >= self.max_size:
                 self.cache.popitem(last=False)
             self.cache[key] = value
-
-        await self._save_cache()
         
         return
     
@@ -139,3 +137,10 @@ class StockNewsKeyGenerator(KeyGenerator):
 
         #key is stock_symbol:current_date:days
         return f"{stock_symbol}:{current_date}:{days}"
+    
+
+class StockPriceKeyGenerator(KeyGenerator):
+    """Key generator for stock price application"""
+    def generate_key(self, stock_symbol, day):
+        #key is stock_symbol:day
+        return f"{stock_symbol}:{day}"

@@ -7,7 +7,7 @@ import finnhub
 from llama_index.core.workflow import Context
 from utils.httpUtil import get_http_request
 from utils.logUtil import setup_logger
-from utils.cacheUtil import CacheUtil, StockNewsKeyGenerator
+from utils.cacheUtil import CacheUtil, StockNewsKeyGenerator, StockPriceKeyGenerator
 
 logger = setup_logger("finUtil")
 
@@ -52,47 +52,14 @@ def get_company_list() -> list:
 def get_stock_quote(symbol: str) -> float:
     return finnhubClient.quote(symbol)['c']
 
-
-def get_stock_price(symbol: str, date: str) -> Optional[Tuple[float, float]]:
-    """
-    Get the stock price for a given symbol and date.
-
-    Args:
-        symbol (str): The stock symbol.
-        date (str): The date in the format 'YYYY-MM-DD'.
-
-    Returns:
-        A float of the close price of the stock
-        on the given date. If the date is not available, returns None.
-    """
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={alphaVantageKey}"
-    try:
-        httpData = get_http_request(url=url)
-    except Exception as e:
-        logger.warning(f"Something went wrong: {e}")
-        return None
-    
-    #check if httpData has a key 'Information':
-    if('Information' in httpData):
-        #check if the value contains 'rate limit':
-        if('rate limit' in httpData['Information']):
-            logger.warning(f"{httpData['Information']}")
-            return None
-    
-    dailyData = httpData['Time Series (Daily)'].get(date)
-    if(dailyData):
-        logger.info(f"Getting stock price for {symbol} on {date}, price: {dailyData}")
-        return (dailyData["4. close"])
-    else:
-        logger.warning(f"Could not find stock price for {symbol} on {date}")
-        return None
     
 
-def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[Optional[float], Optional[float]]:
+async def get_stock_prices(ctx: Context, symbol: str, workday: str, previousWorkday: str) -> Tuple[Optional[float], Optional[float]]:
     """
     For a given stock symbol, get the stock price on the given date and price on the previous workday.
 
     Args:
+        ctx (Context): The context between multi-agents.
         symbol (str): The stock symbol.
         workday (str): The date in the format 'YYYY-MM-DD'.
         previousWorkday (str): The date in the format 'YYYY-MM-DD'.
@@ -102,12 +69,25 @@ def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[O
         on the given date and the previous day.
         If the price is not available, set it to None.
     """
+    #check if prices can be got from cache:
+    current_state = await ctx.get("state")
+    if "stock_price_cache" not in current_state:
+        logger.error(f"No stock price cache found in context.")
+        return (None, None)
+    
+    stockPriceCache = current_state["stock_price_cache"]
+    workdayData = await stockPriceCache.get(symbol, workday)
+    previousWorkdayData = await stockPriceCache.get(symbol, previousWorkday)
+    if(workdayData != None and previousWorkdayData != None):
+        logger.info(f"Got stock price from cache for {symbol} on {workday} and {previousWorkday}")
+        return (workdayData, previousWorkdayData)
+
     url = f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={alphaVantageKey}"
     try:
         httpData = get_http_request(url=url)
     except Exception as e:
         logger.warning(f"Something went wrong: {e}")
-        return None
+        return (None, None)
     
     #check if httpData has a key 'Information':
     if('Information' in httpData):
@@ -115,18 +95,33 @@ def get_stock_prices(symbol: str, workday: str, previousWorkday: str) -> Tuple[O
         if('rate limit' in httpData['Information']):
             logger.warning(f"{httpData['Information']}")
             return (None, None)
+
+    #save all valid data to cache
+    count = 0
+    priceDataDict = httpData['Time Series (Daily)']
+    for date in priceDataDict:
+        await stockPriceCache.add(priceDataDict[date]["4. close"], symbol, date)
+        count += 1
+    logger.info(f"Saved {count} stock prices to cache for {symbol}")
+
+    #save prices cache to file:
+    await stockPriceCache.save_to_file()
+
+    #save prices cache to context:
+    current_state["stock_price_cache"] = stockPriceCache
+    await ctx.set("state", current_state)
     
     workdayData = httpData['Time Series (Daily)'].get(workday)
     previousWorkdayData = httpData['Time Series (Daily)'].get(previousWorkday)
 
     if(not workdayData):
         logger.warning(f"Could not find stock price for {symbol} on {workday}")
-        workdayData = None
+        workdayData = 0.0
     else:
         workdayData = workdayData["4. close"]
     if(not previousWorkdayData):
         logger.warning(f"Could not find stock price for {symbol} on {previousWorkday}")
-        previousWorkdayData = None
+        previousWorkdayData = 0.0
     else:
         previousWorkdayData = previousWorkdayData["4. close"]
 
@@ -232,7 +227,15 @@ async def save_stock_event_to_cache(stockEvent: str):
 
     await stockNewsCache.add(stockEvent, stock_symbol, past_days)
     logger.info(f"Added stock news to cache by: {stock_symbol}, {past_days}")
+    await stockNewsCache.save_to_file()
     return
+
+
+async def load_stock_price_from_cache() -> CacheUtil:
+    keyGenerator = StockPriceKeyGenerator()
+    stockPriceCache = CacheUtil(1000, 'data/stockPriceCache.json', keyGenerator)
+    await stockPriceCache.load_cache()
+    return stockPriceCache
 
 
 

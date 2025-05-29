@@ -177,3 +177,4 @@ credentials
 temp
 logs
 data/stockNewsCache.json
+data/stockPriceCache.json
