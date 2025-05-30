@@ -8,7 +8,7 @@ def setup_logger(module_name, log_dir="logs"):
         os.makedirs(log_dir)
 
     logger = logging.getLogger(module_name)
-    logger.setLevel(logging.INFO)
+    logger.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter(
         f"%(asctime)s [%(levelname)s] [{module_name}: %(lineno)d]: %(message)s"
@@ -17,7 +17,8 @@ def setup_logger(module_name, log_dir="logs"):
     file_handler = RotatingFileHandler(
         f"{log_dir}/app.log",
         maxBytes=5*1024*1024,
-        backupCount=2
+        backupCount=2,
+        encoding='utf-8'
     )
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)

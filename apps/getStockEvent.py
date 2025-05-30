@@ -1,5 +1,6 @@
 import re
 import asyncio
+import json
 from typing import Tuple
 from utils.companyCompleter import CompanyInput
 from utils.newsUtil import get_past_news
@@ -9,6 +10,11 @@ from llama_index.llms.deepseek import DeepSeek
 from llama_index.core.agent.workflow import AgentWorkflow
 from llama_index.core.workflow import Context
 from llama_index.core.agent.workflow import FunctionAgent
+from llama_index.core.agent.workflow import (
+    AgentOutput,
+    ToolCall,
+    ToolCallResult,
+)
 from utils.cacheUtil import CacheUtil, StockNewsKeyGenerator
 from utils.logUtil import setup_logger
 
@@ -56,7 +62,12 @@ async def save_events(ctx: Context, stockEvents: str) -> str:
     Useful for saving stock events. The events are representd in a string with json format.
     
     """
-    logger.info(f"Saving stock events to context: {stockEvents}")
+    logger.info(f"Saving stock events to context")
+
+    stockEventsDict = json.loads(stockEvents)
+    if(stockEventsDict['stock_total_events'] == 0):
+        print(f"Failed to find any news, please check logs for more details.")
+        return "No stock events found."
     
     current_state = await ctx.get("state")
     if "stock_events" not in current_state:
@@ -112,7 +123,28 @@ async def myWorkFlow(systemPromt, formatPrompt, cachePrompt, llm, toolList):
         }
     )
 
-    await agent_workflow.run(user_msg="Show me stock price change related news")
+    handler = agent_workflow.run(user_msg="Show me stock price change related news")
+
+    #To enable debug logging, set logging level to DEBUG in utils/logUtil.py. It's very useful to hunt down bugs:
+    current_agent = None
+    async for event in handler.stream_events():
+        if (
+            hasattr(event, "current_agent_name")
+            and event.current_agent_name != current_agent
+        ):
+            current_agent = event.current_agent_name
+            logger.debug(f"{'='*50}")
+            logger.debug(f"🤖 Agent: {current_agent}")
+            logger.debug(f"{'='*50}\n")
+        elif isinstance(event, AgentOutput):
+            if event.response.content:
+                logger.debug(f"📤 Output: {event.response.content}")
+            if event.tool_calls:
+                logger.debug(f"🛠️  Planning to use tools: {[call.tool_name for call in event.tool_calls]}")
+        elif isinstance(event, ToolCallResult):
+            logger.debug(f"🔧 Tool Result ({event.tool_name}) Arguments: ({event.tool_kwargs}) Output: {event.tool_output}")
+        elif isinstance(event, ToolCall):
+            logger.debug(f"🔨 Calling Tool: ({event.tool_name}) With arguments: {event.tool_kwargs}")
     return
 
 

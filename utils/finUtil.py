@@ -100,7 +100,7 @@ async def get_stock_prices(ctx: Context, symbol: str, workday: str, previousWork
     count = 0
     priceDataDict = httpData['Time Series (Daily)']
     for date in priceDataDict:
-        await stockPriceCache.add(priceDataDict[date]["4. close"], symbol, date)
+        await stockPriceCache.add(float(priceDataDict[date]["4. close"]), symbol, date)
         count += 1
     logger.info(f"Saved {count} stock prices to cache for {symbol}")
 
@@ -118,12 +118,12 @@ async def get_stock_prices(ctx: Context, symbol: str, workday: str, previousWork
         logger.warning(f"Could not find stock price for {symbol} on {workday}")
         workdayData = 0.0
     else:
-        workdayData = workdayData["4. close"]
+        workdayData = float(workdayData["4. close"])
     if(not previousWorkdayData):
         logger.warning(f"Could not find stock price for {symbol} on {previousWorkday}")
         previousWorkdayData = 0.0
     else:
-        previousWorkdayData = previousWorkdayData["4. close"]
+        previousWorkdayData = float(previousWorkdayData["4. close"])
 
     if(workdayData and previousWorkdayData):
         logger.info(f"Getting price for {symbol} on {workday} and {previousWorkday}: {workdayData}, {previousWorkdayData}")
@@ -131,7 +131,7 @@ async def get_stock_prices(ctx: Context, symbol: str, workday: str, previousWork
     return (workdayData, previousWorkdayData)
 
 
-def format_stock_event_string_to_table(stockEvent: str) -> PrettyTable:
+def format_stock_event_string_to_table(stockEvent: str):
     #get the json format string
     stockEvent = json.loads(stockEvent)
 
@@ -152,10 +152,10 @@ def format_stock_event_string_to_table(stockEvent: str) -> PrettyTable:
         table.add_row([event["time"], event["summary"], event["previous"], event["close"]])
 
     print(table)
-    return table
+    return
 
 
-async def format_stock_event_string(ctx: Context) -> PrettyTable:
+async def format_stock_event_string(ctx: Context) -> str:
     """
     For a stock event representd in json format string, format it to a table.
 
@@ -177,7 +177,7 @@ async def format_stock_event_string(ctx: Context) -> PrettyTable:
             }}
 
     Returns:
-        A formatted table of the stock event
+        A string indicating the stock event has been formatted
     """
     current_state = await ctx.get("state")
     if "stock_events" not in current_state:
@@ -185,14 +185,14 @@ async def format_stock_event_string(ctx: Context) -> PrettyTable:
         return None
 
     stockEvent = current_state["stock_events"]
-    logger.info(f"Formatting stock event for {stockEvent['stock_symbol']}")
-    formatTable = format_stock_event_string_to_table(stockEvent)
-    return formatTable
+    logger.info(f"Formatting and print stock event")
+    format_stock_event_string_to_table(stockEvent)
+    return "Stock event formatted and printed"
     
 
 
 
-async def save_stock_event_to_cache(stockEvent: str):
+async def save_stock_event_to_cache(stockEvent: str) -> str:
     """
     For a stock event representd in json format string, save it to a cache file.
 
@@ -211,12 +211,15 @@ async def save_stock_event_to_cache(stockEvent: str):
                 }}
             ]
             }}
+
+    Returns:
+        A string indicating whether the stock event is saved to cache
     """
     stockEvent = json.loads(stockEvent)
 
     #if stock_price_events is empty, then don't save to cache:
     if(len(stockEvent["stock_price_events"]) == 0):
-        return
+        return "No stock price events found in stock event"
     
     #save to cache:
     stock_symbol = stockEvent["stock_symbol"]
@@ -228,7 +231,7 @@ async def save_stock_event_to_cache(stockEvent: str):
     await stockNewsCache.add(stockEvent, stock_symbol, past_days)
     logger.info(f"Added stock news to cache by: {stock_symbol}, {past_days}")
     await stockNewsCache.save_to_file()
-    return
+    return "Stock news saved to cache file"
 
 
 async def load_stock_price_from_cache() -> CacheUtil:
