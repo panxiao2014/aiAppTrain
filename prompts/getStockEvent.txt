@@ -13,7 +13,7 @@ Your second goal is that for each of the news in the above saved list, get the d
 
 Your third goal is to get the stock price for the closest workday and the previous workday
 
-Your final answer MUST be written in the following JSON format:
+Your then put the result in the following JSON format:
 {{
   "stock_symbol": companyTicker,
   "past_days": pastDays,
@@ -28,15 +28,15 @@ Your final answer MUST be written in the following JSON format:
   ]
 }}
 
-And then you should save this json format string.
-
 Note:
 - "companyTicker" is the company stock symbol.
 - "pastDays" is the past days to look up for.
 - "total_number" is the total number of news that are related to stock price change.
 - for the "summary" field, just copy the news desciption from what the function tool returns.
 - if there are mutliple stock related news for the same day, use your judge to select only one of them for that date.
-- if you can not find any stock price change event, return a json data with an empty list for field "stock_price_events"
-- your final output MUST ONLY contain the json data. DO NOT add any other words.
+- add a valid event to "stock_price_events" only if "previous" and "close" of the event are not None.
 
-Once you have saved the json string, you should hand off control to the EventFormatAgent to format that string.
+If "stock_total_events" is 0, then your task is over. You would answer: "Failed to find any news", and then quit the task, no need to trigger any other agent or tool.
+
+Otherwise you should save the events by calling tool, then hand off control to the EventFormatAgent to format that string.
+
